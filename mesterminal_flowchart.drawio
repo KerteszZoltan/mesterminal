@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-18T07:14:06.186Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 OPR/77.0.4054.80" etag="1Zwh3ysjFWSN9QM5uSY-" version="14.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-18T07:21:58.346Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 OPR/77.0.4054.80" etag="Dedaa17KabDeRqlryg3i" version="14.8.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
-    <mxGraphModel dx="742" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
+    <mxGraphModel dx="424" dy="317" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
@@ -200,16 +200,16 @@
           <mxGeometry x="280" y="542" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="x8MXK3ZDoMF1PxTp1U8--80" value="&quot;Munkalap belépve&quot; lámpa be&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="320" y="495" width="120" height="30" as="geometry" />
+          <mxGeometry x="350" y="495" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="x8MXK3ZDoMF1PxTp1U8--81" value="Szerszám beállítás" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="80" y="470" width="80" height="80" as="geometry" />
+          <mxGeometry x="70" y="470" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="x8MXK3ZDoMF1PxTp1U8--82" value="Egyéb leállás" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="80" y="560" width="80" height="80" as="geometry" />
+          <mxGeometry x="70" y="560" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="x8MXK3ZDoMF1PxTp1U8--83" value="Napi karbantartás" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="80" y="650" width="80" height="80" as="geometry" />
+          <mxGeometry x="70" y="650" width="80" height="80" as="geometry" />
         </mxCell>
         <mxCell id="x8MXK3ZDoMF1PxTp1U8--92" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="x8MXK3ZDoMF1PxTp1U8--84" target="x8MXK3ZDoMF1PxTp1U8--81">
           <mxGeometry relative="1" as="geometry">
@@ -228,11 +228,29 @@
         <mxCell id="x8MXK3ZDoMF1PxTp1U8--85" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="200" y="589" width="50" height="22" as="geometry" />
         </mxCell>
-        <mxCell id="x8MXK3ZDoMF1PxTp1U8--90" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="x8MXK3ZDoMF1PxTp1U8--86" target="x8MXK3ZDoMF1PxTp1U8--83">
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--99" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="x8MXK3ZDoMF1PxTp1U8--86" target="x8MXK3ZDoMF1PxTp1U8--83">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="x8MXK3ZDoMF1PxTp1U8--86" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="200" y="679" width="50" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--93" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="500" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--94" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="589" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--100" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="170" y="682" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--101" value="&quot;napi karbantartás&quot; lámpa be" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="707" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--102" value="&quot;egyéb leállás&quot; lámpa be" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="150" y="620" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--103" value="&quot;szerszám beállítás&quot; lámpa be" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="140" y="530" width="130" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
