@@ -1,9 +1,42 @@
-<mxfile host="app.diagrams.net" modified="2021-06-18T06:13:47.288Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 OPR/77.0.4054.80" etag="BK0fOYsm-lxgKGlMN1_-" version="14.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-18T06:27:25.995Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.77 Safari/537.36 OPR/77.0.4054.80" etag="Aq6rrdMvGmYP-KwxB-0w" version="14.8.0" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="742" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="1654" math="0" shadow="0">
       <root>
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
         <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--22" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="x8MXK3ZDoMF1PxTp1U8--0" target="x8MXK3ZDoMF1PxTp1U8--7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--0" value="Terminál bekapcsolva" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="10" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--1" value="START" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="300" y="50" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="x8MXK3ZDoMF1PxTp1U8--7" target="x8MXK3ZDoMF1PxTp1U8--13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--7" value="Dolgozói belépés" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="340" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--10" value="Üzemmód kiválasztása" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="300" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="x8MXK3ZDoMF1PxTp1U8--13" target="x8MXK3ZDoMF1PxTp1U8--10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--13" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="390" y="240" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--17" value="&quot;Dolgozó belépve&quot; lámpa be" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="400" y="240" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--19" value="Munkalap" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="280" y="450" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="x8MXK3ZDoMF1PxTp1U8--20" value="TMK" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="440" y="450" width="80" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
