@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-06-28T07:00:56.573Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90" etag="ZmwbMKa_4C0EoW593-LM" version="14.8.0" type="github">
+<mxfile host="app.diagrams.net" modified="2021-06-28T07:03:48.428Z" agent="5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.101 Safari/537.36 OPR/77.0.4054.90" etag="q7ym6tuFDhVYKgYiyp2u" version="14.8.0" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1183" dy="690" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="873" dy="653" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -439,7 +439,7 @@
         <mxCell id="yWYArfhdRHVZELzkM0rF-33" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-29">
           <mxGeometry y="60" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="yWYArfhdRHVZELzkM0rF-34" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-33">
+        <mxCell id="yWYArfhdRHVZELzkM0rF-34" value="FK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-33">
           <mxGeometry width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yWYArfhdRHVZELzkM0rF-35" value="munkalap_vonalkod" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-33">
@@ -520,7 +520,7 @@
         <mxCell id="yWYArfhdRHVZELzkM0rF-60" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-56">
           <mxGeometry y="60" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="yWYArfhdRHVZELzkM0rF-61" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-60">
+        <mxCell id="yWYArfhdRHVZELzkM0rF-61" value="FK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-60">
           <mxGeometry width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yWYArfhdRHVZELzkM0rF-62" value="dolgozoVonalkod" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-60">
@@ -529,7 +529,7 @@
         <mxCell id="yWYArfhdRHVZELzkM0rF-63" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-56">
           <mxGeometry y="90" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="yWYArfhdRHVZELzkM0rF-64" value="" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-63">
+        <mxCell id="yWYArfhdRHVZELzkM0rF-64" value="FK" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;editable=1;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-63">
           <mxGeometry width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="yWYArfhdRHVZELzkM0rF-65" value="posztId" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;overflow=hidden;" vertex="1" parent="yWYArfhdRHVZELzkM0rF-63">
