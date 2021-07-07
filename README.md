@@ -1,1 +1,1 @@
-Mesterminal-hoz szükséges adatok, képek, tervek. 
+Mesterminál webes felület
