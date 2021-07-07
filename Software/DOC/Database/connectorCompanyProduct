@@ -1,0 +1,11 @@
+CREATE TABLE `mesterminal`.`companyforeignpartnumbers` ( 
+    `companyForeignPartId` INT NOT NULL AUTO_INCREMENT , 
+    `companyId` INT NOT NULL , 
+    `productId` INT NOT NULL , 
+    `foreignId` INT NOT NULL , 
+    PRIMARY KEY (`companyForeignPartId`),
+    FOREIGN KEY (productId) REFERENCES products(productId),
+    FOREIGN KEY (companyId) REFERENCES companys(companyId)
+
+    ) 
+ENGINE = InnoDB;

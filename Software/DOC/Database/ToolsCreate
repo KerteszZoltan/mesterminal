@@ -1,0 +1,5 @@
+CREATE TABLE `mesterminal`.`tools` ( 
+    `toolId` INT NOT NULL AUTO_INCREMENT , 
+    `toolName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+    PRIMARY KEY (`toolId`)) 
+    ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

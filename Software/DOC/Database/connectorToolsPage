@@ -1,0 +1,9 @@
+CREATE TABLE `mesterminal`.`toolpage` ( 
+    `toolAndPageId` INT NOT NULL AUTO_INCREMENT , 
+    `workpageId` INT NOT NULL , 
+    `toolId` INT NOT NULL , 
+    PRIMARY KEY (`toolAndPageId`),
+    FOREIGN KEY (workpageId) REFERENCES workpages(workpageId),
+    FOREIGN KEY (toolId) REFERENCES tools(toolId)
+) 
+ENGINE = InnoDB;

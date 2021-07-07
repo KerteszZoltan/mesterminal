@@ -1,0 +1,7 @@
+CREATE TABLE `mesterminal`.`tmkworkpages` ( 
+    `tmkId` INT NOT NULL AUTO_INCREMENT , 
+    `workpageId` INT NOT NULL , 
+    PRIMARY KEY (`tmkId`),
+    FOREIGN KEY (workpageId) REFERENCES workpages(workpageId)
+) 
+ENGINE = InnoDB;

@@ -1,0 +1,9 @@
+CREATE TABLE `mesterminal`.`errorpage` ( 
+    `errorAndPageId` INT NOT NULL AUTO_INCREMENT , 
+    `workpageId` INT NOT NULL , 
+    `errorId` INT NOT NULL , 
+    PRIMARY KEY (`errorAndPageId`),
+    FOREIGN KEY (workpageId) REFERENCES workpages(workpageId),
+    FOREIGN KEY (errorId) REFERENCES errors(errorId)
+) 
+ENGINE = InnoDB;

@@ -1,0 +1,13 @@
+CREATE TABLE `mesterminal`.`workpages` ( 
+    `workpageId` INT NOT NULL AUTO_INCREMENT , 
+    `workpageName` VARCHAR(255) NOT NULL , 
+    `expectedDB` INT NOT NULL ,
+    `successedDB` int(11) DEFAULT NULL,
+    `discardDB` int(11) DEFAULT NULL,
+    `orderId` INT NOT NULL,
+    `productId` INT NOT NULL,
+    PRIMARY KEY (`workpageId`),
+    FOREIGN KEY (productId) REFERENCES products(productId),
+    FOREIGN KEY (orderId) REFERENCES orders(orderId)
+    ) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;
