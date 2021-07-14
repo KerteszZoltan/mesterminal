@@ -13,7 +13,7 @@ else{
 if($adminId != 0){
 include_once("html_frame/html_body.html");
 include_once("connection.php");
-print '<form action="feldolgozok/newWorkerPosts.php" method="POST">
+print '<form action="feldolgozok/newWorkerOperation.php" method="POST">
         <div class="input-group mb-3">
         <div class="input-group mb-3">
         <label class="input-group-text" for="workers">Dolgozó</label>
@@ -21,9 +21,9 @@ print '<form action="feldolgozok/newWorkerPosts.php" method="POST">
           <option selected>Válassz Dolgozót</option>
 ';
 $selectWorker="SELECT * FROM `workers`";
-$selectWorkpage="SELECT * FROM `posts`";
+$selectOperation="SELECT * FROM `operations`";
 $reultWorker = $conn -> query($selectWorker);
-$reultWorkpage = $conn -> query($selectWorkpage);
+$reultOperation = $conn -> query($selectOperation);
 if ($reultWorker->num_rows > 0) {
     while($row = $reultWorker->fetch_assoc()) {
         print '
@@ -34,24 +34,29 @@ if ($reultWorker->num_rows > 0) {
 print '</select>
 <div class="input-group mb-3">
   <div class="input-group mb-3">
-  <label class="input-group-text" for="postId">Poszt</label>
-  <select name="postId" class="form-select" id="postId">
-    <option selected>Válassz Posztot</option>';
-    if ($reultWorkpage->num_rows > 0) {
-        while($row = $reultWorkpage->fetch_assoc()) {
+  <label class="input-group-text" for="postId">Művelet</label>
+  <select name="operationId" class="form-select" id="operationId">
+    <option selected>Válassz műveletet</option>';
+    if ($reultOperation->num_rows > 0) {
+        while($row = $reultOperation->fetch_assoc()) {
             print '
-              <option value="'.$row['postId'].'">'.$row['postName'].'</option>
+              <option value="'.$row['operationId'].'">'.$row['operationName'].'</option>
             ';
         }
     }
     print'
   </select>
+  <div class="input-group mb-3">
+  <label class="input-group-text" >Művelettel eltöltött negyed óra</label>
+  <input type="number" name="operationTime">
+  </div>
+  </div>
 </div>
   <input type="submit" value="Rögzítés" class="btn btn-primary">
 </div>
 </form>
 ';
-include_once("lists/listWorkerPosts.php");
+include_once("lists/listWorkersOperations.php");
 
 }
 else{

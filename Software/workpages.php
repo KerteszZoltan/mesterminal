@@ -41,7 +41,7 @@ print '
 <input type="submit" value="Rögzítés" class="btn btn-primary">
 </form>
 ';
-include_once("lists/listWorkapges.php");
+include_once("lists/listWorkpages.php");
 }
 else{
     print '<img src="./DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

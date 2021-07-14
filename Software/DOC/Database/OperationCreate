@@ -1,0 +1,5 @@
+CREATE TABLE `mesterminal`.`operations` ( 
+    `operationId` INT NOT NULL AUTO_INCREMENT , 
+    `operationName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+    PRIMARY KEY (`operationId`)) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

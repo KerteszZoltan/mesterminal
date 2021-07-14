@@ -48,7 +48,7 @@ print '</select>
   </select>
   <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Termékhez tartozó idegencikkszám:</span>
-  <input type="text" name="foreignId" class="form-control" placeholder="Idegen cikkszám" aria-label="nev" aria-describedby="basic-addon1" required>
+  <input type="text" name="foreignId" class="form-control" placeholder="Idegen cikkszám" aria-label="nev" aria-describedby="basic-addon1" >
   </div>
   <input type="submit" value="Rögzítés" class="btn btn-primary">
 </div>

@@ -2,8 +2,6 @@ CREATE TABLE `workers` (
   `workerId` int(11) NOT NULL AUTO_INCREMENT,
   `workerName` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
   `workerPhone` varchar(12) COLLATE utf8_hungarian_ci NOT NULL,
-  `postId` int(11) NOT NULL,
-    PRIMARY KEY (`workerId`),
-    FOREIGN KEY (postId) REFERENCES posts(postId)
+    PRIMARY KEY (`workerId`)
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;

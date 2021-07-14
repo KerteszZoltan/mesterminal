@@ -41,7 +41,7 @@ print '</select>
 if(isset($_POST['companyId']))
 {
     $actualCompany=$_POST['companyId'];
-    $selectProductCompany="SELECT * from products INNER JOIN companyforeignpartnumbers ON companyforeignpartnumbers.productId=products.productId 
+    $selectProductCompany="SELECT * from products LEFT JOIN companyforeignpartnumbers ON companyforeignpartnumbers.productId=products.productId 
     where companyforeignpartnumbers.companyId='$actualCompany'";
     
     $resultproductsCompany = $conn -> query($selectProductCompany);

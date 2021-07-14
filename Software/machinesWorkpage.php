@@ -51,7 +51,7 @@ print '</select>
 </div>
 </form>
 ';
-include_once("lists/.php");
+include_once("lists/listMachinesWorkpage.php");
 
 }
 else{

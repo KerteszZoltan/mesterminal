@@ -8,14 +8,14 @@ if(!isset($_SESSION)){
 if(!empty($_POST)){
     
     
-    print $postName = ucwords($_POST['postName']);
-    print $postId=$_POST['postId'];
-    $sql="UPDATE `posts` SET `postName`='$postName' WHERE `postId`='$postId'";
+    print $operationName = ucwords($_POST['operationName']);
+    print $operationId=$_POST['operationId'];
+    $sql="UPDATE `operations` SET `operationName`='$operationName' WHERE `operationId`='$operationId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";
     } else{
-        header("Location: ../posts.php");
+        header("Location: ../operations.php");
     }
 }
 ?>
