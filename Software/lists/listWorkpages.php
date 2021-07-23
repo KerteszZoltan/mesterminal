@@ -27,8 +27,10 @@ if ($reultErrors->num_rows > 0) {
     while($row = $reultErrors->fetch_assoc()) {
         print '
             <tr>
+            <form action="workpageId.php" method="POST">
+            <td><input type="submit" name="workpageId" value="'.$row["workpageId"].'"></td>
+            </form>
             <form action="feldolgozok/modifyWorkpage.php" method="POST">
-            <td>'.$row["workpageId"].'</td>
             <td><input type="text" name="workpageName" value="'.$row["workpageName"].'"></td>
 
 

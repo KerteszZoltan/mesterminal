@@ -1,0 +1,10 @@
+CREATE TABLE `mesterminal`.`errormachine` ( 
+    `errorAndMachineId` INT NOT NULL AUTO_INCREMENT , 
+    `machineId` INT NOT NULL , 
+    `errorId` INT NOT NULL , 
+    `errorDate` DATETIME NOT NULL , 
+    `errorDescription` TEXT CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+    PRIMARY KEY (`errorAndMachineId`),
+    FOREIGN KEY (errorId) REFERENCES errors(errorId),
+    FOREIGN KEY (machineId) REFERENCES machines(machineId)) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

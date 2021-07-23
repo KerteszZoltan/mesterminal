@@ -12,7 +12,7 @@ print '
     <tr>
     ';
 
-$sql="SELECT workpages.workpageId, workpages.workpageName, machines.machineName from machines INNER JOIN machinepage on machines.machineId=machinepage.machineId INNER JOIN workpages on workpages.workpageId=machinepage.workpageId GROUP by machines.machineId;";
+$sql="SELECT workpages.workpageId, workpages.workpageName, machines.machineName from machines INNER JOIN machinepage on machines.machineId=machinepage.machineId INNER JOIN workpages on workpages.workpageId=machinepage.workpageId";
 $reultWorkersPosts = $conn -> query($sql);
 if ($reultWorkersPosts->num_rows > 0) {
     

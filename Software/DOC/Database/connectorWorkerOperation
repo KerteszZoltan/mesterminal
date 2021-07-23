@@ -3,6 +3,7 @@ CREATE TABLE `mesterminal`.`workeroperations` (
     `workerId` INT NOT NULL , 
     `operationId` INT NOT NULL , 
     `operationTime` INT NOT NULL , 
+    `operationMonth` INT NOT NULL,
     PRIMARY KEY (`workerAndOperationId`),
     FOREIGN KEY (workerId) REFERENCES workers(workerId),
     FOREIGN KEY (operationId) REFERENCES operations(operationId)

@@ -34,15 +34,14 @@ if ($resultCompanys->num_rows > 0) {
     }
 }
 print '</select>
-  <input type="submit" value="Rögzítés" class="btn btn-primary">
+  <input type="submit" value="Kiválasztás" class="btn btn-primary">
 </div>
 </form>
 ';
 if(isset($_POST['companyId']))
 {
     $actualCompany=$_POST['companyId'];
-    $selectProductCompany="SELECT * from products LEFT JOIN companyforeignpartnumbers ON companyforeignpartnumbers.productId=products.productId 
-    where companyforeignpartnumbers.companyId='$actualCompany'";
+    $selectProductCompany="SELECT * from products";
     
     $resultproductsCompany = $conn -> query($selectProductCompany);
     if ($resultproductsCompany->num_rows > 0) {
@@ -56,7 +55,7 @@ if(isset($_POST['companyId']))
     ';
     while($row = $resultproductsCompany->fetch_assoc()) {
         print '
-          <option value="'.$row['foreignId'].'">'.$row['productName'].'</option>
+          <option value="'.$row['productId'].'">'.$row['productName'].'</option>
         ';
     }
     print '</select>
@@ -102,9 +101,10 @@ if(isset($_POST['companyId']))
         }
     }
 
+} else{
+    include_once("lists/listOrders.php");
 }
-}
-else{
+} else{
     print '<img src="./DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';
     print '<div class="input-group-text">Használat előtt jelentkezz be!<br></div>';
     print '<form action="index.php"><button type="submit" class="btn btn-primary">Bejelentkezés</button> </form>';

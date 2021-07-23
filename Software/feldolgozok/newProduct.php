@@ -21,7 +21,7 @@ if($hibaCheck->num_rows > 0){
         if(!$sql){
             print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';
             print '<div class="input-group-text">Hiba a feltöltés közben!<br></div>';
-            print '<form action="../errors.php"><button type="submit" class="btn btn-primary">Új hiba feltöltés</button> </form>';
+            print '<form action="../products.php"><button type="submit" class="btn btn-primary">Új hiba feltöltés</button> </form>';
         }else{
             header("Location: ../products.php");
             

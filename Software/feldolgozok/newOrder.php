@@ -27,11 +27,12 @@ $resultCheck= $conn->query($partCheck);
 if($resultCheck->num_rows > 0){
     $product='';
     while($row = $resultCheck->fetch_assoc()) {
-       $product=$row['companyForeignPartId'];
+       print '<|>'. $product=$row['foreignId'].'<|>';
     }
     print $sql="INSERT INTO orders (workNumber,companyId,quantity,orderDate,shippingDate,productId) 
     VALUES ('{$workNumber}','{$companyId}','{$quantity}','{$orderDate}','{$shippingDate}','{$product}')";
     $conn -> query($sql);
+    
 }
 else{
     print $sql="INSERT INTO orders (workNumber,companyId,quantity,orderDate,shippingDate,productId) 
