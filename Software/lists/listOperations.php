@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$sql="SELECT * from `operations`";
+$sql="SELECT * from `operation`";
 $reultErrors = $conn -> query($sql);
 if ($reultErrors->num_rows > 0) {
     print '
@@ -15,6 +15,7 @@ if ($reultErrors->num_rows > 0) {
             <th scope="col">Művelet azonosító</th>
             <th scope="col">Művelet név</th>
             <th scope="col">Módosítás</th>
+            <th scope="col">Törlés</th>
         </tr>
         </thead>
         <tbody>
@@ -23,9 +24,12 @@ if ($reultErrors->num_rows > 0) {
         print '
             <tr>
             <form action="feldolgozok/modifyOperation.php" method="POST">
-            <td>'.$row["operationId"].'</td>
-            <td><input type="text" name="operationName" value="'.$row["operationName"].'"></td>
-            <td><Button type="submit" name="operationId" value="'.$row["operationId"].'" class="btn btn-primary">Módosítás</button>
+            <td>'.$row["ID"].'</td>
+            <td><input type="text" name="operation_name" value="'.$row["operation_name"].'"></td>
+            <td><Button type="submit" name="operationId" value="'.$row["ID"].'" class="btn btn-primary">Módosítás</button>
+            </form>
+            <form action="feldolgozok/deleteOperation.php" method="POST">
+            <td><Button type="submit" name="operationId" value="'.$row["ID"].'" class="btn btn-danger">Törlés</button>
             </form>
             </tr>';
     }

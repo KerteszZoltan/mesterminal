@@ -6,14 +6,15 @@ if(!isset($_SESSION)){
 }
 
 if(!empty($_POST)){
-    print $postId=$_POST['postId'];
-    print $sql="DELETE FROM `post` WHERE `ID`='$postId'";
+    print $operationId=$_POST['operationId'];
+    print $sql="DELETE FROM `operation` WHERE `ID`='$operationId'";
     $result = $conn->query($sql);
     if(!$result){
-        header("Location: ../post.php");
         print "nem sikerült a törlés";
+        header("Location: ../operation.php");
+
     } else{
-        header("Location: ../post.php");
+        header("Location: ../operation.php");
     }
 }
 ?>

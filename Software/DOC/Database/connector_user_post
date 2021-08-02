@@ -1,0 +1,9 @@
+CREATE TABLE `mesterminal`.`user_post` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `user_ID` INT NOT NULL , 
+    `post_ID` INT NOT NULL , 
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (user_ID) REFERENCES user(ID),
+    FOREIGN KEY (post_ID) REFERENCES post(ID)
+    ) 
+ENGINE = InnoDB;

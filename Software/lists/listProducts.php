@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$sql="SELECT * from `products` order by productName";
+$sql="SELECT * from `product` order by product_name";
 $reultErrors = $conn -> query($sql);
 if ($reultErrors->num_rows > 0) {
     print '
@@ -14,6 +14,7 @@ if ($reultErrors->num_rows > 0) {
         <tr>
             <th scope="col">Termék Azonosító</th>
             <th scope="col">Termék Név</th>
+            <th scope="col">Termék Vonalkód</th>
             <th scope="col">Módosítás</th>
 
         </tr>
@@ -23,10 +24,11 @@ if ($reultErrors->num_rows > 0) {
     while($row = $reultErrors->fetch_assoc()) {
         print '
             <tr>
-            <form action="feldolgozok/modifyProducts.php" method="POST">
-            <td>'.$row["productId"].'</td>
-            <td><input type="text" name="productName" value="'.$row["productName"].'"></td>
-            <td><Button type="submit" name="productId" value="'.$row["productId"].'" class="btn btn-primary">Módosítás</button></td>
+            <form action="feldolgozok/modifyProduct.php" method="POST">
+            <td>'.$row["ID"].'</td>
+            <td><input type="text" name="product_name" value="'.$row["product_name"].'"></td>
+            <td><input type="text" name="product_barcode" value="'.$row["product_barcode"].'"></td>
+            <td><Button type="submit" name="productId" value="'.$row["ID"].'" class="btn btn-primary">Módosítás</button></td>
             </form>
             </tr>';
     }

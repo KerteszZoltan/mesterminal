@@ -16,7 +16,7 @@ print '
 <form action="feldolgozok/newPost.php" method="POST">
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Poszt megnevezés</span>
-  <input type="text" name="postName" class="form-control" placeholder="pl. karbantartó " required>
+  <input type="text" name="post_name" class="form-control" placeholder="pl. karbantartó " required>
   <input type="submit" value="Rögzítés" class="btn btn-primary">
 </div>
 </form>

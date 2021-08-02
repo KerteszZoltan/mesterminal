@@ -1,5 +1,6 @@
-CREATE TABLE `mesterminal`.`machines` ( 
-    `machineId` INT NOT NULL AUTO_INCREMENT , 
-    `machineName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
-    PRIMARY KEY (`machineId`)) 
-    ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;
+CREATE TABLE `mesterminal`.`machine` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT, 
+    `machine_barcode` INT(11), 
+    `machine_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+    PRIMARY KEY (`ID`)
+) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

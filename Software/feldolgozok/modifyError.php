@@ -6,14 +6,15 @@ if(!isset($_SESSION)){
 }
 
 if(!empty($_POST)){
-    print $errorName = ucwords($_POST['errorName']);
+    print $error_name = ucwords($_POST['error_name']);
+    print $error_barcode=$_POST['error_barcode'];
     print $errorId=$_POST['errorId'];
-    $sql="UPDATE `errors` SET `errorName`='$errorName' WHERE `errorId`='$errorId'";
+    $sql="UPDATE `error` SET `error_barcode`='$error_barcode', `error_name`='$error_name' WHERE `ID`='$errorId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";
     } else{
-        header("Location: ../errors.php");
+        header("Location: ../error.php");
     }
 }
 ?>

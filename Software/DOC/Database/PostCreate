@@ -1,0 +1,5 @@
+CREATE TABLE `mesterminal`.`post` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `post_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+     PRIMARY KEY (`ID`)
+)ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

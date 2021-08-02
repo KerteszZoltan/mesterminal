@@ -7,14 +7,14 @@ if(!isset($_SESSION)){
 
 if(!empty($_POST)){
     print $machineId=$_POST['machineId'];
-    print $sql="DELETE FROM `machines` WHERE `machineId`='$machineId'";
+    print $sql="DELETE FROM `machine` WHERE `ID`='$machineId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a törlés";
-        header("Location: ../machines.php");
+        header("Location: ../machine.php");
 
     } else{
-        header("Location: ../machines.php");
+        header("Location: ../machine.php");
     }
 }
 ?>

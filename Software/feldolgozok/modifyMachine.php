@@ -8,14 +8,15 @@ if(!isset($_SESSION)){
 if(!empty($_POST)){
     
     
-    print $machineName = ucwords($_POST['machineName']);
+    print $machine_name = ucwords($_POST['machine_name']);
+    print $machine_barcode=$_POST['machine_barcode'];
     print $machineId=$_POST['machineId'];
-    $sql="UPDATE `machines` SET `machineName`='$machineName' WHERE `machineId`='$machineId'";
+    $sql="UPDATE `machine` SET `machine_name`='$machine_name', `machine_barcode`='$machine_barcode' WHERE `ID`='$machineId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";
     } else{
-        header("Location: ../machines.php");
+        header("Location: ../machine.php");
     }
 }
 ?>

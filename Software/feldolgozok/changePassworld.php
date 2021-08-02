@@ -8,14 +8,14 @@ if(!isset($_SESSION)){
 if(!empty($_POST)){
     
     $adminId=$_SESSION['aid'];
-    $codedPassworld=md5($_POST['passworld']);
+    $codedPassword=md5($_POST['password']);
     
-    $sql="UPDATE `admins` SET `Passworld`='$codedPassworld' WHERE `adminId`='$adminId'";
+    $sql="UPDATE `user` SET `user_password`='$codedPassword' WHERE `ID`='$adminId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";
     } else{
-        header("Location: ../machines.php");
+        header("Location: ../mainPage.php");
         include_once("logout.php");
     }
 }

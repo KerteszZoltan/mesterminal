@@ -7,13 +7,13 @@ if(!isset($_SESSION)){
 
 if(!empty($_POST)){
     print $toolId=$_POST['toolId'];
-    print $sql="DELETE FROM `tools` WHERE `toolId`='$toolId'";
+    print $sql="DELETE FROM `tool` WHERE `ID`='$toolId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a törlés";
-        header("Location: ../tools.php");
+        header("Location: ../tool.php");
     } else{
-        header("Location: ../tools.php");
+        header("Location: ../tool.php");
     }
 }
 ?>

@@ -10,12 +10,13 @@ if(!empty($_POST)){
     
     print $toolName = ucwords($_POST['toolName']);
     print $toolId=$_POST['toolId'];
-    $sql="UPDATE `tools` SET `toolName`='$toolName' WHERE `toolId`='$toolId'";
+    print $tool_barcode=$_POST['tool_barcode'];
+    $sql="UPDATE `tool` SET `tool_name`='$toolName', tool_barcode='$tool_barcode' WHERE `ID`='$toolId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";
     } else{
-        header("Location: ../tools.php");
+        header("Location: ../tool.php");
     }
 }
 ?>

@@ -1,0 +1,9 @@
+CREATE TABLE `mesterminal`.`product_attachment` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `attachment_ID` INT NOT NULL ,
+    `product_ID` INT NOT NULL ,
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (attachment_ID) REFERENCES attachment(ID),
+    FOREIGN KEY (product_ID) REFERENCES product(ID)
+) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;
