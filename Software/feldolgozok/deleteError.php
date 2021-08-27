@@ -7,13 +7,13 @@ if(!isset($_SESSION)){
 
 if(!empty($_POST)){
     print $errorId=$_POST['errorId'];
-    print $sql="DELETE FROM `errors` WHERE `errorId`='$errorId'";
+    print $sql="DELETE FROM `error` WHERE `ID`='$errorId'";
     $result = $conn->query($sql);
     if(!$result){
-        header("Location: ../errors.php");
+        header("Location: ../error.php");
         print "nem sikerült a törlés";
     } else{
-        header("Location: ../errors.php");
+        header("Location: ../error.php");
     }
 }
 ?>

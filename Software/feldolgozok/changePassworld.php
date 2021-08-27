@@ -10,7 +10,7 @@ if(!empty($_POST)){
     $adminId=$_SESSION['aid'];
     $codedPassword=md5($_POST['password']);
     
-    $sql="UPDATE `user` SET `user_password`='$codedPassword' WHERE `ID`='$adminId'";
+    $sql="UPDATE `user` SET `password`='$codedPassword' WHERE `ID`='$adminId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";

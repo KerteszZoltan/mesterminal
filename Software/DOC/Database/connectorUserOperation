@@ -1,0 +1,11 @@
+CREATE TABLE `mesterminal`.`user_operation` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `user_ID` INT NOT NULL , 
+    `operation_ID` INT NOT NULL , 
+    `time` INT NOT NULL , 
+    `month` INT NOT NULL,
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (user_ID) REFERENCES user(ID),
+    FOREIGN KEY (operation_ID) REFERENCES operation(ID)
+    ) 
+ENGINE = InnoDB;

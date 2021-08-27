@@ -23,7 +23,7 @@ if (!isset($partOfName[2])) {
 }
 print $user_ID=$_POST['user_ID']."<br>";
 
-print $sql="UPDATE `user` SET `user_barcode`='$user_barcode', `user_name`='$user_name', `user_phone`='$user_phone', `user_email`='$user_email', `user_password`='$user_password' where `ID`='$user_ID'";
+print $sql="UPDATE `user` SET `barcode`='$user_barcode', `name`='$user_name', `phone`='$user_phone', `email`='$user_email', `password`='$user_password' where `ID`='$user_ID'";
 $result = $conn->query($sql);
 if(!$result){
     print "nem sikerült a módosítás";

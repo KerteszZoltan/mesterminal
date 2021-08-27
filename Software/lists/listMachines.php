@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$sql="SELECT * from `machine` order by machine_name ASC";
+$sql="SELECT * from `machine` order by ID DESC";
 $reultErrors = $conn -> query($sql);
 if ($reultErrors->num_rows > 0) {
     print '
@@ -28,8 +28,8 @@ if ($reultErrors->num_rows > 0) {
             <tr>
             <form action="feldolgozok/modifyMachine.php" method="POST">
             <td>'.$row["ID"].'</td>
-            <td><input type="text" name="machine_barcode" value="'.$row["machine_barcode"].'"></td>
-            <td><input type="text" name="machine_name" value="'.$row["machine_name"].'"></td>
+            <td><input type="text" name="machine_barcode" value="'.$row["barcode"].'"></td>
+            <td><input type="text" name="machine_name" value="'.$row["name"].'" style="width:500px"></td>
             <td><Button type="submit" name="machineId" value="'.$row["ID"].'" class="btn btn-primary">Módosítás</button>
             </form>
             <form action="feldolgozok/deleteMachine.php" method="POST">

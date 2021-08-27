@@ -1,7 +1,7 @@
 <?php
 $servername = "127.0.0.1";
-$username = "web";
-$password = "teszt";
+$username = "admin";
+$password = "Admin_12345.";
 $database = "mesterminal";
 
 // Create connection

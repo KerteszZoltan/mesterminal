@@ -1,10 +1,15 @@
-CREATE TABLE `mesterminal`.`errormachine` ( 
-    `errorAndMachineId` INT NOT NULL AUTO_INCREMENT , 
-    `machineId` INT NOT NULL , 
-    `errorId` INT NOT NULL , 
-    `errorDate` DATETIME NOT NULL , 
-    `errorDescription` TEXT CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
-    PRIMARY KEY (`errorAndMachineId`),
-    FOREIGN KEY (errorId) REFERENCES errors(errorId),
-    FOREIGN KEY (machineId) REFERENCES machines(machineId)) 
+CREATE TABLE `mesterminal`.`order_error_machine` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `order_ID` INT , 
+    `error_ID` INT not null , 
+    `machine_ID` INT , 
+    `start` DATETIME NOT NULL , 
+    `stop` DATETIME NOT NULL , 
+    `user_ID` INT not null, 
+    `description` TEXT CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (order_ID) REFERENCES order(ID),
+    FOREIGN KEY (error_ID) REFERENCES error(ID),
+    FOREIGN KEY (machine_ID) REFERENCES machine(ID),
+    FOREIGN KEY (user_ID) REFERENCES user(ID)) 
 ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

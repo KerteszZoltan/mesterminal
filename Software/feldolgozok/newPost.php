@@ -7,7 +7,7 @@ if(!isset($_SESSION)){
 
 print $post_name = ucwords($_POST['post_name']);
 
-    $sql ="INSERT INTO post (post_name) 
+    $sql ="INSERT INTO role (name) 
 	VALUES ('{$post_name}')";
     $result = $conn->query($sql);
     if(!$sql){

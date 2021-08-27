@@ -18,7 +18,7 @@ include_once("connection.php");
 
 
 }
-$selectProduct="SELECT * FROM `product`";
+$selectProduct="SELECT * FROM `product` ORDER BY name ASC";
 $reultProduct = $conn -> query($selectProduct);
 print '
 <div class="input-group mb-3">
@@ -29,7 +29,7 @@ print '
     if ($reultProduct->num_rows > 0) {
         while($row = $reultProduct->fetch_assoc()) {
             print '
-              <option value="'.$row['ID'].'">'.$row['product_name'].'</option>
+              <option value="'.$row['ID'].'">'.$row['name'].'</option>
             ';
         }
     }
@@ -37,7 +37,7 @@ print '
   </select>
 <div>
   Kérlek Válaszd ki a képet
-  <input type="file" name="file">
+  <input type="file" name="srcfile">
   <input type="submit" value="Dokumentumok feltöltése" name="submit">
   </div>
 </form>';

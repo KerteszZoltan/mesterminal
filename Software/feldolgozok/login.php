@@ -10,7 +10,7 @@ echo $email = $_POST['email'];
 echo $jelszocoded = md5($_POST['jelszo']);
 echo $jelszouncoded = $_POST['jelszo'];
 
-$sql="SELECT * FROM user WHERE user_email='$email' && user_password='$jelszocoded'";
+$sql="SELECT * FROM user WHERE email='$email' && password='$jelszocoded'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -20,7 +20,7 @@ if ($result->num_rows > 0) {
     header("Location: ../mainPage.php");
   }
 } else {
-    print $sqluncoded="SELECT * FROM user WHERE user_email='$email' && user_password='$jelszouncoded'";
+    print $sqluncoded="SELECT * FROM user WHERE email='$email' && password='$jelszouncoded'";
     $resultuncoded = $conn->query($sqluncoded);
     if ($resultuncoded->num_rows > 0) {
       while($row = $resultuncoded->fetch_assoc()) {

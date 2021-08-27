@@ -25,7 +25,7 @@ if ($reultErrors->num_rows > 0) {
             <tr>
             <form action="feldolgozok/modifyOperation.php" method="POST">
             <td>'.$row["ID"].'</td>
-            <td><input type="text" name="operation_name" value="'.$row["operation_name"].'"></td>
+            <td><input type="text" style="width:500px" name="operation_name" value="'.$row["name"].'"></td>
             <td><Button type="submit" name="operationId" value="'.$row["ID"].'" class="btn btn-primary">Módosítás</button>
             </form>
             <form action="feldolgozok/deleteOperation.php" method="POST">

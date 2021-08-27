@@ -16,7 +16,7 @@ print '
 <form action="feldolgozok/newError.php" method="POST">
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Hiba vonalkód</span>
-  <input type="text" name="error_barcode" class="form-control" placeholder="pl. 123456" required>
+  <input type="text" name="error_barcode" class="form-control" placeholder="pl. 123456" >
   </div>
 <div class="input-group mb-3">
 

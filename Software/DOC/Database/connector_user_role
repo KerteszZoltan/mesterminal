@@ -1,0 +1,9 @@
+CREATE TABLE `mesterminal`.`user_role` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `user_ID` INT NOT NULL , 
+    `role_ID` INT NOT NULL , 
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (user_ID) REFERENCES user(ID),
+    FOREIGN KEY (role_ID) REFERENCES role(ID)
+    ) 
+ENGINE = InnoDB;

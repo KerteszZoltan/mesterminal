@@ -9,6 +9,8 @@ $user_barcode  = $_POST['user_barcode'];
 $user_name  = $_POST['user_name'];
 $user_phone  = $_POST['user_phone'];
 $user_email  = $_POST['user_email'];
+$user_type  = $_POST['user_type'];
+
 $user_password  = $_POST['user_password'];
 $partOfName = explode(" ", $user_name);
 $firstName=ucwords($partOfName[0]);
@@ -22,8 +24,8 @@ if (!isset($partOfName[2])) {
 
 
 
-$sql ="INSERT INTO user (user_barcode,user_name,user_phone,user_email,user_password) 
-       VALUES ('{$user_barcode}','{$user_name}','{$user_phone}','{$user_email}','{$user_password}')";
+print $sql ="INSERT INTO user (barcode, name,phone,email,password, type ) 
+       VALUES ('{$user_barcode}','{$user_name}','{$user_phone}','{$user_email}','{$user_password}','{$user_type}')";
 $result = $conn->query($sql);
 if(!$sql){
     print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

@@ -1,6 +1,6 @@
 CREATE TABLE `mesterminal`.`attachment` ( 
     `ID` INT NOT NULL AUTO_INCREMENT , 
-    `attachment_name` VARCHAR(255) NOT NULL ,
+    `name` VARCHAR(255) NOT NULL ,
     PRIMARY KEY (`ID`)
 ) 
 ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

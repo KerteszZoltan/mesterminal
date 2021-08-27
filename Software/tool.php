@@ -1,5 +1,7 @@
 <?php 
 include_once("html_frame/html_head.html");
+include_once("connection.php");
+
 if(!isset($_SESSION)){
     session_start();
 }
@@ -16,10 +18,27 @@ print '
 <form action="feldolgozok/newTool.php" method="POST">
 <div class="input-group mb-3">
 <span class="input-group-text" id="basic-addon1">Szerszám vonalkódja</span>
-  <input type="text" name="tool_barcode" class="form-control" placeholder="pl. 123456 " required>
+  <input type="text" name="tool_barcode" class="form-control" placeholder="pl. 123456 ">
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Szerszám megnevezése</span>
   <input type="text" name="tool_name" class="form-control" placeholder="pl. Fúró " required>
+</div>
+<div class="input-group mb-3">
+<label class="input-group-text" for="machines">Gép</label>
+<select name="machineId" class="form-select" id="machines">
+  <option value=" " selected>Válassz Gépet</option>
+';
+$selectMachines="SELECT * FROM `machine`";
+$reultMachines = $conn -> query($selectMachines);
+if ($reultMachines->num_rows > 0) {
+  while($row = $reultMachines->fetch_assoc()) {
+      print '
+        <option value="'.$row['ID'].'">'.$row['name'].'</option>
+      ';
+  }
+}
+print '
+</select>
 </div>
 
 <div class="input-group mb-3">

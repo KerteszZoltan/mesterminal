@@ -8,7 +8,7 @@ print '<hr style="width:100%">
 <label class="input-group-text" for="workpages">Csatolmánnyal rendelkező termékek</label>
 <select name="productId" class="form-select" id="productId">
   <option selected>Válassz terméket</option>';
-    $sqlWorkpageName="SELECT product.ID as productId, product.product_name as productName FROM product 
+    $sqlWorkpageName="SELECT product.ID as productId, product.name as productName FROM product 
     INNER JOIN product_attachment ON product.ID=product_attachment.product_ID
     GROUP BY product.ID";
     $workpageNameResult = $conn -> query($sqlWorkpageName);
@@ -29,7 +29,7 @@ print '
         <th colspan="2" style="text-align:center; vertical-align:middle"> Kiválasztott termékhez tartozó csatolmányok </th>
         <tr>
             ';
-$sqlSelectAppendixs="SELECT * from attachment 
+$sqlSelectAppendixs="SELECT attachment.name as attachment_name, `attachment`.ID , product.name as product_name from attachment 
         INNER JOIN product_attachment on attachment.ID=product_attachment.attachment_ID 
         INNER JOIN product on product_attachment.product_ID=product.ID
         where product_attachment.product_ID='$productId'";
@@ -44,7 +44,7 @@ if ($resultProducts->num_rows > 0) {
         <td style="text-align:center; vertical-align:middle">'.$row['product_name'].'.'.$exploded.'</td>
         <td style="text-align:center; vertical-align:middle">
             <form action="./feldolgozok/downloader.php" method="POST">
-            <input type="hidden" name="appendixName" value="'.$row['attachment_name'].'">
+            <input type="hidden" name="attachmentID" value="'.$row['ID'].'">
             <input type="submit" value="Letöltés">
             </form>
         </td></tr>

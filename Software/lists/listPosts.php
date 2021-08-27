@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$sql="SELECT * from `post` order by post_name ASC";
+$sql="SELECT * from `role` order by name ASC";
 $reultErrors = $conn -> query($sql);
 if ($reultErrors->num_rows > 0) {
     print '
@@ -25,7 +25,7 @@ if ($reultErrors->num_rows > 0) {
             <tr>
             <form action="feldolgozok/modifyPost.php" method="POST">
             <td>'.$row["ID"].'</td>
-            <td><input type="text" name="postName" value="'.$row["post_name"].'"></td>
+            <td><input type="text" style="width:500px" name="postName" value="'.$row["name"].'"></td>
             <td><Button type="submit" name="postId" value="'.$row["ID"].'" class="btn btn-primary">Módosítás</button>
             </form>
             <form action="feldolgozok/deletePost.php" method="POST">

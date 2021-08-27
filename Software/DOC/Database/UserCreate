@@ -1,13 +1,12 @@
 CREATE TABLE `user` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `user_barcode` int (11),
-  `user_name` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
-  `user_phone` varchar(12) COLLATE utf8_hungarian_ci NOT NULL,
-  `user_email` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
-  `user_password` varchar(100) COLLATE utf8_hungarian_ci NOT NULL,
-  `user_type` int(11),
+  `barcode` int (11),
+  `name` varchar(255) COLLATE utf8_hungarian_ci NOT NULL,
+  `phone` varchar(12) COLLATE utf8_hungarian_ci ,
+  `email` varchar(255) COLLATE utf8_hungarian_ci ,
+  `password` varchar(100) COLLATE utf8_hungarian_ci ,
+  `type` varchar(100) not null,
 
-    PRIMARY KEY (`ID`),
-    FOREIGN KEY (user_type) REFERENCES user_type(ID)
+  PRIMARY KEY (`ID`)
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;

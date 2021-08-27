@@ -7,7 +7,7 @@ if(!isset($_SESSION)){
 
 if(!empty($_POST)){
     print $postId=$_POST['postId'];
-    print $sql="DELETE FROM `post` WHERE `ID`='$postId'";
+    print $sql="DELETE FROM `role` WHERE `ID`='$postId'";
     $result = $conn->query($sql);
     if(!$result){
         header("Location: ../post.php");

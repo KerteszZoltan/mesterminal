@@ -16,7 +16,7 @@ print '
 <form action="feldolgozok/newMachine.php" method="POST">
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Gép vonalkódja</span>
-  <input type="text" name="machine_barcode" class="form-control" placeholder="pl. 123456 " required>
+  <input type="text" name="machine_barcode" class="form-control" placeholder="pl. 123456 ">
   </div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Gép megnevezése</span>

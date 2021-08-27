@@ -1,5 +1,9 @@
 CREATE TABLE `mesterminal`.`machine_tool` (
      `ID` INT NOT NULL AUTO_INCREMENT , 
-     `machine_tool_name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
-     PRIMARY KEY (`ID`)
+     `barcode` INT,
+     `machine_ID` INT ,
+     `name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+     PRIMARY KEY (`ID`),
+    FOREIGN KEY (machine_ID) REFERENCES machine(ID)
+
 ) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

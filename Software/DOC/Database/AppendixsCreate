@@ -1,6 +1,0 @@
-CREATE TABLE `mesterminal`.`products` ( 
-    `appendixId` INT NOT NULL AUTO_INCREMENT , 
-    `appendixName` VARCHAR(255) NOT NULL ,
-    PRIMARY KEY (`appendixId`)
-) 
-ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

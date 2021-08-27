@@ -1,0 +1,8 @@
+CREATE TABLE `mesterminal`.`site` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `city` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+    `street` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL , 
+    `house_number` int(10) NOT NULL , 
+
+    PRIMARY KEY (`ID`)) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

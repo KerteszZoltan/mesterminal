@@ -7,15 +7,23 @@ if(!isset($_SESSION)){
 
 print $tool_name = ucwords($_POST['tool_name']);
 print $tool_barcode = $_POST['tool_barcode'];
+print $machineId = $_POST['machineId'];
 
-    $sql ="INSERT INTO tool (tool_barcode, tool_name) 
+if (!isset($machineId)) {
+    $sql ="INSERT INTO machine_tool (barcode, name) 
 	VALUES ('{$tool_barcode}','{$tool_name}')";
     $result = $conn->query($sql);
-    if(!$sql){
-        print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';
-        print '<div class="input-group-text">Hiba a feltöltés közben!<br></div>';
-        print '<form action="../tool.php"><button type="submit" class="btn btn-primary">Új szerszám feltöltés</button> </form>';
-    }else{
-        header("Location: ../tool.php");    
-    }
+    header("Location: ../tool.php");    
+
+}else{
+    $sql ="INSERT INTO machine_tool (barcode, machine_ID, name) 
+	VALUES ('{$tool_barcode}','{$machineId}','{$tool_name}')";
+    $result = $conn->query($sql);
+    header("Location: ../tool.php");    
+
+}
+
+
+    
+    
 ?>

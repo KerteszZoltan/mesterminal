@@ -1,9 +1,0 @@
-CREATE TABLE `mesterminal`.`workerposts` ( 
-    `workerAndPostId` INT NOT NULL AUTO_INCREMENT , 
-    `workerId` INT NOT NULL , 
-    `postId` INT NOT NULL , 
-    PRIMARY KEY (`workerAndPostId`),
-    FOREIGN KEY (workerId) REFERENCES workers(workerId),
-    FOREIGN KEY (postId) REFERENCES posts(postId)
-    ) 
-ENGINE = InnoDB;

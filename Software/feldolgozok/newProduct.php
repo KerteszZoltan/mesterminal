@@ -9,7 +9,7 @@ print $product_name = ucwords($_POST['product_name']);
 print $product_barcode = $_POST['product_barcode'];
 
 
-$productCheck = $conn->query( "SELECT * FROM `product` WHERE product_name = '$product_name' OR product_barcode='$product_barcode' ");
+$productCheck = $conn->query( "SELECT * FROM `product` WHERE name = '$product_name' OR barcode='$product_barcode' ");
 if($productCheck->num_rows > 0){
     print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';
     print '<div class="input-group-text">Sikertelen feltöltés! Ilyen névvel vagy vonalkóddal már létezik termék!<br></div>';
@@ -17,7 +17,7 @@ if($productCheck->num_rows > 0){
     ?>
     <?php
     }else{
-        $sql ="INSERT INTO product (product_name, product_barcode) 
+        $sql ="INSERT INTO product (name, barcode) 
 	    VALUES ('{$product_name}','{$product_barcode}')";
         $result = $conn->query($sql);
         if(!$sql){

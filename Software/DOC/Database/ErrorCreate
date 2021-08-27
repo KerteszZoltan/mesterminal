@@ -1,7 +1,7 @@
 CREATE TABLE `mesterminal`.`error` ( 
     `ID` INT NOT NULL AUTO_INCREMENT , 
-    `error_barcode` INT(11) , 
-    `error_name` VARCHAR(200) , 
+    `barcode` INT(11) , 
+    `name` VARCHAR(200) , 
     PRIMARY KEY (`ID`)    
 ) 
 ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

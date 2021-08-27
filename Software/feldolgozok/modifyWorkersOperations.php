@@ -11,9 +11,9 @@ if(!empty($_POST)){
     print $actualTime=$_POST['actualTime'];
     print $operationTime=$_POST['operationTime']*15;
     $actualMonth=date("Y/m");
-    $newTime=$actualTime+$operationTime;
+    $newTime=(int)($actualTime+$operationTime);
 
-    $sql="UPDATE `workeroperations` SET `operationTime`='$newTime' WHERE workerAndOperationId='$workerAndOperationId' and operationMonth='$actualMonth'";
+    $sql="UPDATE `user_operation` SET `time`='$newTime' WHERE ID='$workerAndOperationId' and month='$actualMonth'";
     $result = $conn->query($sql); 
     if(!$result){
         print "nem sikerült a módosítás";

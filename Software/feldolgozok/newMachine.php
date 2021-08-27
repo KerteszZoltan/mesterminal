@@ -8,7 +8,7 @@ if(!isset($_SESSION)){
 print $machine_name = ucwords($_POST['machine_name']);
 print $machine_barcode = $_POST['machine_barcode'];
 
-print $sql ="INSERT INTO machine (machine_barcode,machine_name) 
+print $sql ="INSERT INTO machine (barcode,name) 
 	   VALUES ('{$machine_barcode}', '{$machine_name}')";
 $result = $conn->query($sql);
     if(!$sql){

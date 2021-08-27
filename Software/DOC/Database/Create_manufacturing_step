@@ -1,0 +1,13 @@
+CREATE TABLE `mesterminal`.`manufacturing_step` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `barcode` VARCHAR(255) ,
+    `step_code` VARCHAR(7) NOT NULL ,
+    `name` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_hungarian_ci NOT NULL ,
+    `normal_time` FLOAT ,
+    `preparation_time` FLOAT ,
+    `unit_of_time` FLOAT ,
+    `category_ID` int ,
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (category_ID) REFERENCES category(ID)
+) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

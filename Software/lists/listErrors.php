@@ -28,8 +28,8 @@ if ($reultErrors->num_rows > 0) {
             <tr>
             <form action="feldolgozok/modifyError.php" method="POST">
             <td>'.$row["ID"].'</td>
-            <td><input type="text" name="error_barcode" value="'.$row["error_barcode"].'"></td>
-            <td><input type="text" name="error_name" value="'.$row["error_name"].'"></td>
+            <td><input type="text" name="error_barcode" value="'.$row["barcode"].'"></td>
+            <td><input style="width:500px" type="text" name="error_name" value="'.$row["name"].'"></td>
             <td><Button type="submit" name="errorId" value="'.$row["ID"].'" class="btn btn-primary">Módosítás</button>
             </form>
             <form action="feldolgozok/deleteError.php" method="POST">

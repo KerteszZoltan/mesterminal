@@ -1,0 +1,11 @@
+CREATE TABLE `mesterminal`.`order_machine_tool` (
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `order_ID` INT,
+    `machine_ID` INT ,
+    `machine_tool_ID` INT ,
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (order_ID) REFERENCES `order`(ID),
+    FOREIGN KEY (machine_ID) REFERENCES `machine`(ID),
+    FOREIGN KEY (machine_tool_ID) REFERENCES `machine_tool`(ID)
+
+) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

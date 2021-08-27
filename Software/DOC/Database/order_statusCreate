@@ -1,0 +1,6 @@
+CREATE TABLE `mesterminal`.`order_status` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `name` VARCHAR(255) NOT NULL ,
+    PRIMARY KEY (`ID`)
+    ) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

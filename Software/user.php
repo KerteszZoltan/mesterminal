@@ -44,17 +44,9 @@ print '
 <div class="input-group mb-3">
         <label class="input-group-text" for="user_type">Dolgozó</label>
         <select name="user_type" class="form-select" id="user_type" required>
-          <option>Válassz dolgozó típust</option>
-';
-$sqlUserType="SELECT * from user_type;";
-$resutlUserType=$conn->query($sqlUserType);
-if ($resutlUserType->num_rows > 0) {
-  while($row = $resutlUserType->fetch_assoc()) {
-    print $row['ID'];
-    print '<option value="'.$row['ID'].'">'.$row['type_name'].'</option>';
-  }
-}
-print '
+          <option selected value="Dolgozó">Dolgozó</option>
+          <option value="Adminisztrátor">Adminisztrátor</option>
+
 </select>
 </div>
 <input type="submit" value="Rögzítés" class="btn btn-primary">

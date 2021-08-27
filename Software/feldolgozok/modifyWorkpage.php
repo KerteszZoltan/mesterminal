@@ -6,22 +6,33 @@ if(!isset($_SESSION)){
 }
 
 if(!empty($_POST)){
-print $workpageId=$_POST['workpageId'];
-print $workpageName=ucwords($_POST['workpageName']);
-print $expectedDB=$_POST['expectedDB'];
-print $successedDB=$_POST['successedDB'];
-print $discardDB=$_POST['discardDB'];
+print $order_ID=$_POST['order_ID'];
+print $barcode=$_POST['barcode'];
+print $order_type_ID=$_POST['order_type_ID'];
+print $customer_number=$_POST['customer_number'];
+print $site_ID=$_POST['site_ID'];
+print $total_count=$_POST['total_count'];
+print $expected_count=$_POST['expected_count'];
+print $pass_count=$_POST['pass_count'];
+print $fail_count=$_POST['fail_count'];
+print $order_status_ID=$_POST['order_status_ID'];
 
-$sql="UPDATE `workpages` SET `workpageName`='$workpageName', 
-                            `expectedDB`='$expectedDB',
-                            `successedDB`='$successedDB',
-                            `discardDB`='$discardDB'
-                             WHERE `workpageId`='$workpageId'";
+
+print $sql="UPDATE `order` SET `barcode`='$barcode', 
+                            `order_type_ID`='$order_type_ID',
+                            `customer_number`='$customer_number',
+                            `site_ID`='$site_ID',
+                            `total_count`='$total_count',
+                            `expected_count`='$expected_count',
+                            `pass_count`='$pass_count',
+                            `fail_count`='$fail_count',
+                            `order_status_ID`='$order_status_ID'
+                             WHERE `ID`='$order_ID'";
 $result = $conn->query($sql);
 if(!$result){
     print "nem sikerült a módosítás";
     } else{  
-    Header("Location: ../workpages.php");
+    Header("Location: ../order.php");
     }
 }
 ?>

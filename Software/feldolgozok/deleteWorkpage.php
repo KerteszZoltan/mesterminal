@@ -7,13 +7,13 @@ if(!isset($_SESSION)){
 
 if(!empty($_POST)){
     print $workpageId=$_POST['workpageId'];
-    $sql="DELETE FROM `workpages` WHERE `workpageId`='$workpageId'";
+    $sql="DELETE FROM `order` WHERE `ID`='$workpageId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a törlés";
-        header("Location: ../workpages.php");
+        header("Location: ../order.php");
     } else{
-        header("Location: ../workpages.php");
+        header("Location: ../order.php");
     }
 }
 ?>

@@ -1,0 +1,19 @@
+CREATE TABLE `mesterminal`.`order_machine_error` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `order_ID` INT  , 
+    `error_ID` INT NOT NULL ,
+    `machine_ID` INT ,
+    `machine_tool_ID` INT ,
+    `date_start` DATETIME ,
+    `date_end` DATETIME ,
+    `user_ID` INT ,
+    `description` VARCHAR(255) ,
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (order_ID) REFERENCES `order`(ID),
+    FOREIGN KEY (error_ID) REFERENCES `error`(ID),
+    FOREIGN KEY (machine_ID) REFERENCES `machine`(ID),
+    FOREIGN KEY (machine_tool_ID) REFERENCES `machine_tool`(ID),
+    FOREIGN KEY (user_ID) REFERENCES `user`(ID)
+    
+    ) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

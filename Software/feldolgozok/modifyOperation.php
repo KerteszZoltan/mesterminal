@@ -10,7 +10,7 @@ if(!empty($_POST)){
     
     print $operation_name = ucwords($_POST['operation_name']);
     print $operationId=$_POST['operationId'];
-    $sql="UPDATE `operation` SET `operation_name`='$operation_name' WHERE `ID`='$operationId'";
+    $sql="UPDATE `operation` SET `name`='$operation_name' WHERE `ID`='$operationId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";

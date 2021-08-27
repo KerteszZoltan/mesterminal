@@ -1,5 +1,0 @@
-CREATE TABLE `mesterminal`.`companys` ( 
-    `companyId` INT NOT NULL AUTO_INCREMENT , 
-    `companyName` VARCHAR(255) NOT NULL , 
-    PRIMARY KEY (`companyId`)) 
-ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

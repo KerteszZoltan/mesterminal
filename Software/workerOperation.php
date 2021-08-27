@@ -20,14 +20,14 @@ print '<form action="feldolgozok/newWorkerOperation.php" method="POST">
         <select name="workerId" class="form-select" id="workers">
           <option selected>Válassz Dolgozót</option>
 ';
-$selectWorker="SELECT * FROM `workers`";
-$selectOperation="SELECT * FROM `operations`";
+$selectWorker="SELECT * FROM `user`";
+$selectOperation="SELECT * FROM `operation`";
 $reultWorker = $conn -> query($selectWorker);
 $reultOperation = $conn -> query($selectOperation);
 if ($reultWorker->num_rows > 0) {
     while($row = $reultWorker->fetch_assoc()) {
         print '
-          <option value="'.$row['workerId'].'">'.$row['workerName'].'</option>
+          <option value="'.$row['ID'].'">'.$row['name'].'</option>
         ';
     }
 }
@@ -40,7 +40,7 @@ print '</select>
     if ($reultOperation->num_rows > 0) {
         while($row = $reultOperation->fetch_assoc()) {
             print '
-              <option value="'.$row['operationId'].'">'.$row['operationName'].'</option>
+              <option value="'.$row['ID'].'">'.$row['name'].'</option>
             ';
         }
     }

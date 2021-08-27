@@ -1,0 +1,19 @@
+CREATE TABLE `mesterminal`.`order` ( 
+    `ID` INT NOT NULL AUTO_INCREMENT , 
+    `barcode` VARCHAR(255)  , 
+    `order_type_ID` INT NOT NULL ,
+    `customer_number` VARCHAR(255) ,
+    `site_ID` int(11) DEFAULT NULL,
+    `product_ID` INT ,
+    `total_count` INT not null,
+    `expected_count` INT not null,
+    `pass_count` INT ,
+    `fail_count` INT  ,
+    `order_status_ID` INT ,
+    PRIMARY KEY (`ID`),
+    FOREIGN KEY (order_type_ID) REFERENCES order_type(ID),
+    FOREIGN KEY (site_ID) REFERENCES site(ID),
+    FOREIGN KEY (product_ID) REFERENCES product(ID),
+    FOREIGN KEY (order_status_ID) REFERENCES order_status(ID)
+    ) 
+ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

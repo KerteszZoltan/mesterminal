@@ -7,13 +7,13 @@ if(!isset($_SESSION)){
 
 if(!empty($_POST)){
     print $siteId=$_POST['siteId'];
-    print $sql="DELETE FROM `sites` WHERE `siteId`='$siteId'";
+    print $sql="DELETE FROM `site` WHERE `ID`='$siteId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a törlés";
-        header("Location: ../sites.php");
+        header("Location: ../site.php");
     } else{
-        header("Location: ../sites.php");
+        header("Location: ../site.php");
     }
 }
 ?>

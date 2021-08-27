@@ -1,0 +1,12 @@
+CREATE TABLE `mesterminal`.`user_order_manufacturing_step` (
+     `ID` INT NOT NULL AUTO_INCREMENT , 
+     `user_ID` INT NOT NULL,
+     `order_manufacturing_step_ID` INT NOT NULL,
+     `time` FLOAT NULL,
+	 `pass_count` FLOAT NULL,
+	 `fail_count` FLOAT NULL,
+     PRIMARY KEY (`ID`),
+    FOREIGN KEY (user_ID) REFERENCES user(ID),
+    FOREIGN KEY (order_manufacturing_step_ID) REFERENCES order_manufacturing_step(ID)
+
+) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

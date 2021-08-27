@@ -7,7 +7,7 @@ if(!isset($_SESSION)){
 
 print $operation_name = ucwords($_POST['operation_name']);
 
-    print $sql ="INSERT INTO operation (operation_name) 
+    print $sql ="INSERT INTO operation (name) 
 	VALUES ('{$operation_name}')";
     $result = $conn->query($sql);
     if(!$sql){

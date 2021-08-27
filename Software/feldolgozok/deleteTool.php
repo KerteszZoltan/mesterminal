@@ -7,7 +7,7 @@ if(!isset($_SESSION)){
 
 if(!empty($_POST)){
     print $toolId=$_POST['toolId'];
-    print $sql="DELETE FROM `tool` WHERE `ID`='$toolId'";
+    print $sql="DELETE FROM `machine_tool` WHERE `ID`='$toolId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a törlés";

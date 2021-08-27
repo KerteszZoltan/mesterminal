@@ -1,9 +1,0 @@
-CREATE TABLE `mesterminal`.`orders` ( 
-    `orderId` INT NOT NULL AUTO_INCREMENT , 
-    `workNumber` VARCHAR(255) NOT NULL , 
-    `productId` INT NOT NULL ,
-    `quantity` int(11) DEFAULT NULL,
-    PRIMARY KEY (`orderId`),
-    FOREIGN KEY (productId) REFERENCES products(productId),
-    ) 
-ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_hungarian_ci;

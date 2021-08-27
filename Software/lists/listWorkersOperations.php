@@ -16,24 +16,24 @@ print '
 
 $actualDate=date("Y/m");
 $sql="SELECT 
-workers.workerId, workers.workerName,
-operations.operationName,
-workeroperations.operationTime, workeroperations.operationMonth, workeroperations.workerAndOperationId
-from `workers` INNER JOIN workeroperations on workers.workerId=workeroperations.workerId
-INNER JOIN operations on workeroperations.operationId=operations.operationId where workeroperations.operationMonth='$actualDate'";
+user.ID, user.name,
+operation.name as operation_name,
+user_operation.time, user_operation.month, user_operation.ID as user_operation_id
+from `user` INNER JOIN user_operation on user.ID=user_operation.user_ID
+INNER JOIN operation on user_operation.operation_ID=operation.ID where user_operation.month='$actualDate'";
 $reultWorkersPosts = $conn -> query($sql);
 if ($reultWorkersPosts->num_rows > 0) {
     while($row = $reultWorkersPosts->fetch_assoc()) {
         print '
-        <tr><td style="text-align:center; vertical-align:middle">'.$row['workerId'].'</td> 
-        <td style="text-align:center; vertical-align:middle">'.$row['workerName'].'</td> 
-        <td style="text-align:center; vertical-align:middle">'.$row['operationName'].'</td> 
+        <tr><td style="text-align:center; vertical-align:middle">'.$row['ID'].'</td> 
+        <td style="text-align:center; vertical-align:middle">'.$row['name'].'</td> 
+        <td style="text-align:center; vertical-align:middle">'.$row['operation_name'].'</td> 
         <form action="feldolgozok/modifyWorkersOperations.php" method="POST">
-        <input type="hidden" name="workerAndOperationId" value="'.$row['workerAndOperationId'].'">
-        <input type="hidden" name="actualTime" value="'.$row['operationTime'].'">
-        <td style="text-align:center; vertical-align:middle"><input type="text" name="operationTime" value="'.$row['operationTime'].'"></td>
+        <input type="hidden" name="workerAndOperationId" value="'.$row['user_operation_id'].'">
+        <input type="hidden" name="actualTime" value="'.$row['time'].'">
+        <td style="text-align:center; vertical-align:middle"><input type="text" name="operationTime" value="'.$row['time'].'"></td>
         </form>
-        <td style="text-align:center; vertical-align:middle">'.$row['operationMonth'].'</td> 
+        <td style="text-align:center; vertical-align:middle">'.$row['month'].'</td> 
         </tr>
         ';
     }
