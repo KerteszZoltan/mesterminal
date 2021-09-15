@@ -29,7 +29,7 @@ if ($reultErrors->num_rows > 0) {
             <td>'.$row["ID"].'</td>
 			<td>'.$row["article_number"].'</td>
 			<td>'.$row["barcode"].'</td>
-            <td><input type="text" name="product_name" style="width:500px" value="'.$row["name"].'"></td>
+            <td><input type="text" name="product_name" style="width:700px" value="'.$row["name"].'"></td>
             <td><Button type="submit" name="productId" value="'.$row["ID"].'" class="btn btn-primary">Módosítás</button></td>
             </form>
             </tr>';

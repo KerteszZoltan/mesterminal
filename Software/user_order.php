@@ -20,7 +20,7 @@ print '<form action="feldolgozok/newWorkerWorkpage.php" method="POST">
         <select name="workerId" class="form-select" id="workers">
           <option selected>Válassz Dolgozót</option>
 ';
-$selectWorker="SELECT * FROM `user`";
+$selectWorker="SELECT * FROM `user` order by name asc";
 $selectWorkpage="SELECT * FROM `order`";
 $reultWorker = $conn -> query($selectWorker);
 $reultWorkpage = $conn -> query($selectWorkpage);

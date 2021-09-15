@@ -24,6 +24,7 @@ print '
 </div>
 <input type="submit" value="Rögzítés" class="btn btn-primary">
 </form>
+
 ';
 include_once("lists/listProducts.php");
 }

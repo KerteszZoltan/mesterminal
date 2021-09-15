@@ -13,8 +13,16 @@ else{
 if($adminId != 0){
 include_once("html_frame/html_body.html");
 print '
-<H1> 404 <br> <h3> Az oldal fejlesztés alatt!
+<form action="feldolgozok/newOrder_type.php" method="POST">
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Rendelés típusa:</span>
+  <input type="text" name="name" class="form-control" placeholder="Típus neve, pl. TMK, Rezsi" aria-label="nev" aria-describedby="basic-addon1" required>
+</div>
+<input type="submit" value="Rögzítés" class="btn btn-primary">
+</form>
+
 ';
+include_once("lists/listOrderType.php");
 }
 else{
     print '<img src="./DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

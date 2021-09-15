@@ -20,6 +20,8 @@ print'
     <span class="input-group-text" id="basic-addon2">Gyártási rendelés vonalkódja:</span>
     <input type="text" class="form-control" name="barcode" placeholder="" aria-describedby="basic-addon2">
 </div> -->
+
+
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon3">Gyártási rendelés típusa</span>
   <select name="order_type" class="form-select" id="order_type_id">
@@ -64,19 +66,17 @@ print'
 
 <div class="input-group mb-3">
   <span class="input-group-text">Termék</span>
-  <select name="product" class="form-select" id="product_id">
+  <select name="product" class="form-select" id="slct">
     <option value=" " selected>Válassz terméket</option>';
-    $selectProduct="SELECT * from product";
+    $selectProduct="SELECT * from product ORDER BY name ASC";
     $resultProduct=$conn->query($selectProduct);
     if ($resultProduct->num_rows > 0) {
       while($row = $resultProduct->fetch_assoc()) {
           print '
             <option value="'.$row['ID'].'">'.$row['ID'].'-'.$row['name'].'</option>
           ';
-      }
-  }
-
-
+        }
+    }
 print '</select>
 </div>
 

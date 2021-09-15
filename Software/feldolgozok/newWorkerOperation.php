@@ -23,7 +23,7 @@ if ($resultCheck->num_rows > 0) {
         print '<div class="input-group-text">Hiba a feltöltés közben!<br></div>';
         print '<form action="../workerOperation.php"><button type="submit" class="btn btn-primary">Új adat feltöltése</button> </form>';
         }else{
-            //header("Location: ../workerOperation.php");    
+            header("Location: ../workerOperation.php");    
         }
 }
 

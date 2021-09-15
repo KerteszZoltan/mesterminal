@@ -20,7 +20,7 @@ user.ID, user.name,
 operation.name as operation_name,
 user_operation.time, user_operation.month, user_operation.ID as user_operation_id
 from `user` INNER JOIN user_operation on user.ID=user_operation.user_ID
-INNER JOIN operation on user_operation.operation_ID=operation.ID where user_operation.month='$actualDate'";
+INNER JOIN operation on user_operation.operation_ID=operation.ID where user_operation.month='$actualDate' ORDER BY `user`.ID asc";
 $reultWorkersPosts = $conn -> query($sql);
 if ($reultWorkersPosts->num_rows > 0) {
     while($row = $reultWorkersPosts->fetch_assoc()) {

@@ -20,11 +20,12 @@ print '<form action="feldolgozok/newOrderMachineTool.php" method="POST">
         <select name="order_ID" class="form-select" id="orders">
           <option selected>Válassz műveleti lapot</option>
 ';
-$selectMachine="SELECT * FROM `machine`";
+$selectMachine="SELECT * FROM `machine` order by name asc";
 $selectMachineTool="SELECT * FROM `machine_tool`";
 $selectOrder="SELECT `order_manufacturing_step`.ID as order_man_fac_ID, 
 `order_manufacturing_step`.barcode as barcode, 
-`manufacturing_step`.step_code
+`manufacturing_step`.step_code,
+`manufacturing_step`.name
 FROM `order_manufacturing_step` 
 INNER JOIN `manufacturing_step` on `order_manufacturing_step`.manufacturing_step_ID=`manufacturing_step`.ID";
 $reultMachines = $conn -> query($selectMachine);
@@ -34,7 +35,7 @@ $resultMachineTool = $conn -> query($selectMachineTool);
 if ($reultOrder->num_rows > 0) {
     while($row = $reultOrder->fetch_assoc()) {
         print '
-          <option value="'.$row['order_man_fac_ID'].'">'.$row['barcode'].'</option>
+          <option value="'.$row['order_man_fac_ID'].'">'.$row['barcode'].' | '.$row['name'].'</option>
         ';
     }
 }
