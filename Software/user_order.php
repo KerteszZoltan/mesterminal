@@ -1,5 +1,6 @@
 <?php 
 include_once("html_frame/html_head.html");
+
 if(!isset($_SESSION)){
     session_start();
 }
@@ -13,7 +14,32 @@ else{
 if($adminId != 0){
 include_once("html_frame/html_body.html");
 include_once("connection.php");
-print '<form action="feldolgozok/newWorkerWorkpage.php" method="POST">
+print '
+<form action="feldolgozok/newWorkerWorkpage.php" method="POST">
+<div class="input-group mb-3">
+  <label class="input-group-text" for="workapages">Gyártási rendelés</label>
+  <select name="workpageId" class="form-select" id="workapages">
+    <option selected value="0">Válassz gyártási rendelés számot</option>';
+    $selectWorkpage="SELECT * FROM `order` where `order`.order_status_ID>'1' order by ID desc";
+    $reultWorkpage = $conn -> query($selectWorkpage);
+    if ($reultWorkpage->num_rows > 0) {
+        while($row = $reultWorkpage->fetch_assoc()) {
+            print '
+              <option value="'.$row['ID'].'">'.$row['ID'].'-'.$row['customer_number'].'</option>
+            ';
+        }
+    }
+    print'
+  </select>
+  <div class="input-group mb-3">
+<label class="input-group-text" for="workers">Gyors projekt felelős kiosztás</label>
+<input type="hidden" name="standard" value="1"> 
+<input type="submit" class="btn btn-primary" value="Standard">
+</div>
+</div>
+</form>
+
+<form action="feldolgozok/newWorkerWorkpage.php" method="POST">
         <div class="input-group mb-3">
         <div class="input-group mb-3">
         <label class="input-group-text" for="workers">Dolgozó</label>
@@ -23,7 +49,6 @@ print '<form action="feldolgozok/newWorkerWorkpage.php" method="POST">
 $selectWorker="SELECT * FROM `user` order by name asc";
 $selectWorkpage="SELECT * FROM `order` where `order`.order_status_ID>'1' order by ID desc";
 $reultWorker = $conn -> query($selectWorker);
-$reultWorkpage = $conn -> query($selectWorkpage);
 if ($reultWorker->num_rows > 0) {
     while($row = $reultWorker->fetch_assoc()) {
         print '
@@ -59,5 +84,4 @@ else{
     print '<div class="input-group-text">Használat előtt jelentkezz be!<br></div>';
     print '<form action="index.php"><button type="submit" class="btn btn-primary">Bejelentkezés</button> </form>';
 }
-
 ?>

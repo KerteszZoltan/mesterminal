@@ -5,12 +5,28 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-print $user_id = $_POST['workerId'];
-print '|';
-print $order_id = $_POST['workpageId'];
-
-
-    $sql ="INSERT INTO user_order (user_ID, order_ID) 
+if(isset($_POST['standard'])){
+    print $workpageId=$_POST['workpageId'];
+    if($workpageId!=0){
+        $users = array(56, 49, 9, 3, 49);
+        $posts = array(10, 8, 20, 17, 18);
+        $sql_standard="INSERT INTO user_order (user_ID, order_ID);";
+        //$result=$conn->query($sql_standard);
+        print $sql_standard="INSERT INTO user_order (user_ID, order_ID, post) VALUES ('{$user}', '{$workpageId}', '{$post}');";
+        $user_count=count($users);
+        $post_count=count($posts);
+        for ($i=0; $i < $user_count ; $i++) { 
+            
+        }
+    }else{
+        print 'Hiba';
+    }
+}
+else{
+    print $user_id = $_POST['workerId'];
+    print '|';
+    print $order_id = $_POST['workpageId'];
+    print $sql ="INSERT INTO user_order (user_ID, order_ID) 
 	VALUES ('{$user_id}','{$order_id}')";
     $result = $conn->query($sql);
     if(!$sql){
@@ -20,4 +36,5 @@ print $order_id = $_POST['workpageId'];
     }else{
         header("Location: ../user_order.php");
     }
+}
 ?>
