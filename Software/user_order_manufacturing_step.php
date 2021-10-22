@@ -15,6 +15,17 @@ else{
 if($adminId != 0){
 include_once("html_frame/html_body.html");
 print'
+
+<form action="user_order_manufacturing_step.php" method="post">
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon3">Gyártási rendelés keresése</span>
+  <input type="text" name="customer_number" class="form-control"  aria-label="Server">
+  <input type="submit" value="Keresés" class="btn btn-primary">
+</div>
+<hr>
+</form>
+
+
 <form action="feldolgozok/newUserOrderManufacturingStep.php" method="POST">
 
 
@@ -39,7 +50,31 @@ print'
 <div class="input-group mb-3">
   <span class="input-group-text">Műveleti lap:</span>
   <select name="order_manufacturing_step_ID" class="form-select" id="order_manufacturing_step_ID">
-    <option value=" " selected>Válassz gyártási lépést</option>';
+  <option value=" " selected>Válassz gyártási lépést</option>';
+  if(isset($_POST['customer_number'])){
+    $customer_number=$_POST['customer_number'];
+    $selectSite="
+	  SELECT `order_manufacturing_step`.ID as orman_ID,
+	  `order_manufacturing_step`.barcode as orman_barcode,
+	  `manufacturing_step`.step_code as step_code,
+	  `manufacturing_step`.name as manstep_name,
+	  `order`.customer_number
+	  from `order_manufacturing_step` 
+	  INNER JOIN `manufacturing_step` ON `manufacturing_step`.ID=`order_manufacturing_step`.manufacturing_step_ID 
+    INNER JOIN `order` ON `order_manufacturing_step`.order_ID=`order`.ID 
+    where  `order`.customer_number='".$customer_number."'
+	  ";
+    $resultSite=$conn->query($selectSite);
+    if ($resultSite->num_rows > 0) {
+      while($row = $resultSite->fetch_assoc()) {
+          print '
+            <option value="'.$row['orman_ID'].'">'.$row['customer_number'].' | '.$row['orman_barcode'].' | '.$row['manstep_name'].'</option>
+          ';
+      }
+  }
+  }
+  else{
+
     $selectSite="
 	SELECT `order_manufacturing_step`.ID as orman_ID,
 	`order_manufacturing_step`.barcode as orman_barcode,
@@ -48,7 +83,7 @@ print'
 	`order`.customer_number
 	from `order_manufacturing_step` 
 	INNER JOIN `manufacturing_step` ON `manufacturing_step`.ID=`order_manufacturing_step`.manufacturing_step_ID 
-    INNER JOIN `order` ON `order_manufacturing_step`.order_ID=`order`.ID
+  INNER JOIN `order` ON `order_manufacturing_step`.order_ID=`order`.ID
 	";
     $resultSite=$conn->query($selectSite);
     if ($resultSite->num_rows > 0) {
@@ -58,6 +93,7 @@ print'
           ';
       }
   }
+}
   
   print '
   </select>

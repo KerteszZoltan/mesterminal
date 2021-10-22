@@ -57,9 +57,9 @@ if ($resultWorkers->num_rows > 0) {
 			<td>'.$row["order_id"].'-'.$row["customer_number"].'</td>
 			<td>'.$row["barcode"].'</td>
             <td>'.$row["step_code"].'-'.$row["step_name"].'</td>
-            <td><input type="text" name="expected_count" value="'.$row["expected_count"].'" style="width:70px"></td>            
-			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="width:70px"></td>
-            <td><input type="text" name="fail_count" value="'.$row["fail_count"].'" style="width:70px"></td>
+            <td><input type="text" name="expected_count" value="'.$row["expected_count"].'" style="width:70px">db</td>            
+			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="width:70px">db/óra</td>
+            <td><input type="text" name="fail_count" value="'.$row["fail_count"].'" style="width:70px">db</td>
 			<td><input type="text" name="normal_time" value="'.$row["normal_time"].'" style="width:70px">perc</td>
 			<td><input type="text" name="preparation_time" value="'.$row["preparation_time"].'" style="width:70px">perc</td>
 			<td><input type="text" name="unit_of_time" value="'.$row["unit_of_time"].'" style="width:70px">perc</td>

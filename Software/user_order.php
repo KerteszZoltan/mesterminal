@@ -21,7 +21,7 @@ print '<form action="feldolgozok/newWorkerWorkpage.php" method="POST">
           <option selected>Válassz Dolgozót</option>
 ';
 $selectWorker="SELECT * FROM `user` order by name asc";
-$selectWorkpage="SELECT * FROM `order`";
+$selectWorkpage="SELECT * FROM `order` where `order`.order_status_ID>'1' order by ID desc";
 $reultWorker = $conn -> query($selectWorker);
 $reultWorkpage = $conn -> query($selectWorkpage);
 if ($reultWorker->num_rows > 0) {
