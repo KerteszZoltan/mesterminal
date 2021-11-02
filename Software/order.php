@@ -68,7 +68,7 @@ print'
   <span class="input-group-text">Termék</span>
   <select name="product" class="form-select" id="slct">
     <option value=" " selected>Válassz terméket</option>';
-    $selectProduct="SELECT * from product ORDER BY name ASC";
+    $selectProduct="SELECT * from product ORDER BY ID ASC";
     $resultProduct=$conn->query($selectProduct);
     if ($resultProduct->num_rows > 0) {
       while($row = $resultProduct->fetch_assoc()) {

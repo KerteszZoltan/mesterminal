@@ -14,6 +14,8 @@ print $time = $_POST['time'];
 print $normal_time = $_POST['normal_time'];
 print $preparation_time = $_POST['preparation_time'];
 print $unit_of_time = $_POST['unit_of_time'];
+print $overhead_fee = $_POST['overhead_fee'];
+
 
 $selectStepCode="SELECT `step_code` FROM `manufacturing_step` WHERE `ID`='$manufacturing_step_ID'";
 $resultStepCode=$conn->query($selectStepCode);
@@ -24,8 +26,8 @@ $resultStepCode=$conn->query($selectStepCode);
 	}
 $barcode=$step_code.'-'.$order_ID;
 
-print $sql ="INSERT INTO `order_manufacturing_step` (barcode,order_ID, manufacturing_step_ID, expected_count, pass_count, fail_count, normal_time, preparation_time, unit_of_time ) 
-       VALUES ('{$barcode}', '{$order_ID}','{$manufacturing_step_ID}', '{$expected_count}', '{$pass_count}', '{$fail_count}', '{$normal_time}','{$preparation_time}','{$unit_of_time}')";
+print $sql ="INSERT INTO `order_manufacturing_step` (barcode,order_ID, manufacturing_step_ID, expected_count, pass_count, fail_count, normal_time, preparation_time, unit_of_time, overhead_fee ) 
+       VALUES ('{$barcode}', '{$order_ID}','{$manufacturing_step_ID}', '{$expected_count}', '{$pass_count}', '{$fail_count}', '{$normal_time}','{$preparation_time}','{$unit_of_time}', '{$overhead_fee}')";
 $result = $conn->query($sql);
 if(!$sql){
     print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

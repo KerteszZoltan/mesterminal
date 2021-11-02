@@ -4,6 +4,12 @@ $username = "admin";
 $password = "Admin_12345.";
 $database = "mesterminal";
 
+// XAMPP TESZT 
+/*
+$username = "root";
+$password = "";
+*/
+
 // Create connection
 $conn = new mysqli($servername, $username, $password, $database);
 // Check connection

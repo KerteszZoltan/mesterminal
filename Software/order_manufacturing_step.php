@@ -19,7 +19,7 @@ print'
 
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon3">Gyártási rendelés keresése</span>
-  <input type="text" name="customer_number" class="form-control" value="'.$customer_number.'" aria-label="Server">
+  <input type="text" name="customer_number" class="form-control" value="" aria-label="Server">
   <input type="submit" value="Keresés" class="btn btn-primary">
 </div>
 <hr>
@@ -114,6 +114,12 @@ print'
   <span class="input-group-text">Egységnyi idő</span>
   <input type="text" name="unit_of_time" class="form-control"  aria-label="Server">
   <span class="input-group-text"> perc/db </span>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Rezsi óradíj</span>
+  <input type="text" name="overhead_fee" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> /óra </span>
 </div>
 
 <input type="submit" value="Rögzítés" class="btn btn-primary">

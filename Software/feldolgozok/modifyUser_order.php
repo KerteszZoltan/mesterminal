@@ -24,7 +24,7 @@ if (isset($_POST['user_order_id'])) {
     if(!$result){
         print "nem sikerült a módosítás";
     } else{
-        header("Location: ../user_order.php");
+        header("Location: ../user_order_role.php");
     }
 }
     

@@ -17,7 +17,8 @@ SELECT `order_manufacturing_step`.ID as order_manufacturing_step_id,
 `order_manufacturing_step`.fail_count,
 `order_manufacturing_step`.normal_time,
 `order_manufacturing_step`.preparation_time,
-`order_manufacturing_step`.unit_of_time
+`order_manufacturing_step`.unit_of_time,
+`order_manufacturing_step`.overhead_fee
 from `order_manufacturing_step` 
 INNER JOIN `manufacturing_step` on `order_manufacturing_step`.manufacturing_step_ID=`manufacturing_step`.ID
 INNER JOIN `order` on `order_manufacturing_step`.`order_ID`=`order`.ID
@@ -40,6 +41,7 @@ if ($resultWorkers->num_rows > 0) {
 			<th scope="col">Norma idő</th>
 			<th scope="col">Előkészítési idő</th>
 			<th scope="col">Egységnyi idő</th>
+			<th scope="col">Rezsióradíj</th>
 			<th scope="col">Módosítás</th>
 			<th scope="col">Törlés</th>
         </tr>
@@ -57,12 +59,13 @@ if ($resultWorkers->num_rows > 0) {
 			<td>'.$row["order_id"].'-'.$row["customer_number"].'</td>
 			<td>'.$row["barcode"].'</td>
             <td>'.$row["step_code"].'-'.$row["step_name"].'</td>
-            <td><input type="text" name="expected_count" value="'.$row["expected_count"].'" style="width:70px">db</td>            
-			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="width:70px">db/óra</td>
-            <td><input type="text" name="fail_count" value="'.$row["fail_count"].'" style="width:70px">db</td>
-			<td><input type="text" name="normal_time" value="'.$row["normal_time"].'" style="width:70px">perc</td>
-			<td><input type="text" name="preparation_time" value="'.$row["preparation_time"].'" style="width:70px">perc</td>
-			<td><input type="text" name="unit_of_time" value="'.$row["unit_of_time"].'" style="width:70px">perc</td>
+            <td><input type="text" name="expected_count" value="'.$row["expected_count"].'" style="max-width:50px">db</td>            
+			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="max-width:50px">db/óra</td>
+            <td><input type="text" name="fail_count" value="'.$row["fail_count"].'" style="max-width:50px">db</td>
+			<td><input type="text" name="normal_time" value="'.$row["normal_time"].'" style="max-width:30px">perc</td>
+			<td><input type="text" name="preparation_time" value="'.$row["preparation_time"].'" style="max-width:30px">perc</td>
+			<td><input type="text" name="unit_of_time" value="'.$row["unit_of_time"].'" style="max-width:30px">perc</td>
+			<td><input type="text" name="overhead_fee" value="'.$row["overhead_fee"].'" style="max-width:50px">Ft/óra</td>
 			<td><input type="hidden" name="ordmanstus_id" value="'.$row["order_manufacturing_step_id"].'"><input type="submit" value="Módosítás" class="btn btn-primary"></td>
             </form>
 			<form action="feldolgozok/deleteOrderManufacturingStep.php" method="POST">
