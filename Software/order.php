@@ -119,7 +119,16 @@ print '</select>
 
 <input type="submit" value="Rögzítés" class="btn btn-primary">
 </form>
-';
+
+<form action="feldolgozok/newDuplicateOrder.php" method="POST">
+<div class="input-group mb-3">
+  <span class="input-group-text"> Másolni kívánt rendelés VRR száma </span>
+  <input type="text" name="customer_number" class="form-control"  aria-label="Server">
+  <input class="btn btn-primary" type="submit" value="Létrehozás">
+</div>
+
+</form>'
+;
 include_once("lists/listWorkpages.php");
 }
 else{

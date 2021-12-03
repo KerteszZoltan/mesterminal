@@ -48,6 +48,11 @@ print '
 print '
 </select>
 </div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Lépés rezsi óradíja:</span>
+  <input type="text" name="overhead_fee" class="form-control" aria-describedby="basic-addon1" required>
+  <span class="input-group-text" id="basic-addon1"> Ft/óra</span>
+</div>
 <input type="submit" value="Rögzítés" class="btn btn-primary">
 </form>
 ';

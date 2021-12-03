@@ -9,6 +9,8 @@ $workerId  = $_POST['workerId'];
 $operationId  = $_POST['operationId'];
 $operationTime = $_POST['operationTime']*15;
 $actualMonth=date("Y/m");
+//$actualMonth="2021/10";
+
 
 $check="SELECT user_ID, operation_ID, month from user_operation where user_ID='$workerId' and operation_ID='$operationId' and month='$actualMonth'";
 $resultCheck=$conn->query($check);

@@ -14,7 +14,9 @@ print '
     ';
     
 
-$actualDate=date("Y/m");
+//$actualDate=date("Y/m");
+$actualDate="2021/11";
+
 $sql="SELECT 
 user.ID, user.name,
 operation.name as operation_name,

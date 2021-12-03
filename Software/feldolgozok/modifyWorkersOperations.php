@@ -11,6 +11,8 @@ if(!empty($_POST)){
     print $actualTime=$_POST['actualTime'];
     print $operationTime=$_POST['operationTime']*15;
     $actualMonth=date("Y/m");
+    //$actualMonth="2021/10";
+
     $newTime=(int)($actualTime+$operationTime);
 
     $sql="UPDATE `user_operation` SET `time`='$newTime' WHERE ID='$workerAndOperationId' and month='$actualMonth'";

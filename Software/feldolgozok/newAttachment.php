@@ -34,12 +34,11 @@ $target_dir = "../attachments/";
 $filename   = uniqid() . "-" . time(); // 5dab1961e93a7-1571494241
 $extension  = pathinfo( $_FILES["srcfile"]["name"], PATHINFO_EXTENSION ); // jpg
 $basename   = $filename . "." . $extension; // 5dab1961e93a7.jpg
-$target_file = $target_dir . $basename;
+print $target_file = $target_dir . $basename;
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
-/*
-// Check if image file is a actual image or fake image
+//Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
   $check = getimagesize($_FILES["srcfile"]["tmp_name"]);
   if($check !== false) {
@@ -49,7 +48,7 @@ if(isset($_POST["submit"])) {
     echo "File is not an image.";
     $uploadOk = 0;
   }
-}*/
+}
 
 // Check if $uploadOk is set to 0 by an error
 if ($uploadOk == 0) {
@@ -59,7 +58,7 @@ if ($uploadOk == 0) {
   if (move_uploaded_file($_FILES["srcfile"]["tmp_name"], $target_file)) {
     echo "The file ". htmlspecialchars( basename( $_FILES["srcfile"]["name"])). " has been uploaded.";
 	$insert ="INSERT INTO attachment (name) 
-           VALUES ('{$basename}')";
+              VALUES ('{$basename}')";
 		$conn->query($insert);
 		$sqlLast="SELECT MAX(ID) as id from attachment";
 		$result = $conn->query($sqlLast);
@@ -75,7 +74,7 @@ if ($uploadOk == 0) {
 		$conn->query($insertProductAppendix);
 		header("Location: ../attachment.php");
   } else {
-    echo "Sorry, there was an error uploading your file.";
+    echo "<br>Sorry, there was an error uploading your file.";
   }
 }
 ?>

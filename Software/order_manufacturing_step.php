@@ -119,7 +119,7 @@ print'
 <div class="input-group mb-3">
   <span class="input-group-text">Rezsi óradíj</span>
   <input type="text" name="overhead_fee" class="form-control"  aria-label="Server">
-  <span class="input-group-text"> /óra </span>
+  <span class="input-group-text"> Ft/óra </span>
 </div>
 
 <input type="submit" value="Rögzítés" class="btn btn-primary">

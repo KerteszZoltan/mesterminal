@@ -22,7 +22,7 @@ SELECT `order_manufacturing_step`.ID as order_manufacturing_step_id,
 from `order_manufacturing_step` 
 INNER JOIN `manufacturing_step` on `order_manufacturing_step`.manufacturing_step_ID=`manufacturing_step`.ID
 INNER JOIN `order` on `order_manufacturing_step`.`order_ID`=`order`.ID
-WHERE `order`.`order_status_ID`>'1'
+WHERE `order`.`order_status_ID`>'1' order by `order_manufacturing_step`.ID DESC 
 ";
 $resultWorkers = $conn -> query($sql);
 if ($resultWorkers->num_rows > 0) {
@@ -63,7 +63,7 @@ if ($resultWorkers->num_rows > 0) {
 			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="max-width:50px">db/óra</td>
             <td><input type="text" name="fail_count" value="'.$row["fail_count"].'" style="max-width:50px">db</td>
 			<td><input type="text" name="normal_time" value="'.$row["normal_time"].'" style="max-width:30px">perc</td>
-			<td><input type="text" name="preparation_time" value="'.$row["preparation_time"].'" style="max-width:30px">perc</td>
+			<td><input type="text" name="preparation_time" value="'.$row["preparation_time"].'" style="max-width:40px">perc</td>
 			<td><input type="text" name="unit_of_time" value="'.$row["unit_of_time"].'" style="max-width:30px">perc</td>
 			<td><input type="text" name="overhead_fee" value="'.$row["overhead_fee"].'" style="max-width:50px">Ft/óra</td>
 			<td><input type="hidden" name="ordmanstus_id" value="'.$row["order_manufacturing_step_id"].'"><input type="submit" value="Módosítás" class="btn btn-primary"></td>

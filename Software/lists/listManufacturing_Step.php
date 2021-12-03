@@ -10,6 +10,7 @@ $selectStep="SELECT
 `manufacturing_step`.step_code,
 `manufacturing_step`.name as step_name,
 `manufacturing_step`.category_ID as stepCatID,
+`manufacturing_step`.overhead_fee,
 `category`.name as catname
  from `manufacturing_step` 
  inner join `category` on `manufacturing_step`.category_ID=`category`.ID";
@@ -25,6 +26,7 @@ if ($resultManufacturingStep->num_rows > 0) {
             <th scope="col">Gyártási lépés kód</th>
             <th scope="col">Gyártási lépés név</th>
             <th scope="col">Gyártási lépés kategória</th>
+            <th scope="col">Rezsi óradíj</th>
             <th scope="col">Módosítás</th>
         </tr>
         </thead>
@@ -35,7 +37,7 @@ if ($resultManufacturingStep->num_rows > 0) {
             <tr>
             <form action="feldolgozok/modifyManufacturingStep.php" method="POST">
             <td>'.$row["manufactstepID"].'</td>
-            <td><input type="text" name="barcode" value="'.$row["barcode"].'"></td>
+            <td><input type="text" name="barcode" value="'.$row["barcode"].'" style="max-width:20px;"></td>
             <td><input type="text" name="step_code" value="'.$row["step_code"].'"></td>
             <td><input type="text" style="width:300px" name="name" value="'.$row["step_name"].'"></td>
 			<td><select name="category_ID" class="form-select" id="category_ID">
@@ -52,6 +54,7 @@ if ($resultManufacturingStep->num_rows > 0) {
             print '
 			</select>
 			</td>
+            <td><input type="text" name="overhead_fee" value="'.$row["overhead_fee"].'"></td>
             <td><Button type="submit" name="id" value="'.$row["manufactstepID"].'" class="btn btn-primary">Módosítás</button>
             </form>
             </tr>';
