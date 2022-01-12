@@ -12,17 +12,22 @@ SELECT `order_manufacturing_step`.ID as order_manufacturing_step_id,
 `order`.ID as order_id,
 `order`.customer_number as customer_number,
 `order_manufacturing_step`.barcode,
-`order_manufacturing_step`.expected_count,
+`order_manufacturing_step`.expected_performance,
+`order_manufacturing_step`.performance,
 `order_manufacturing_step`.pass_count,
 `order_manufacturing_step`.fail_count,
-`order_manufacturing_step`.normal_time,
-`order_manufacturing_step`.preparation_time,
-`order_manufacturing_step`.unit_of_time,
-`order_manufacturing_step`.overhead_fee
+`order_manufacturing_step`.overhead_fee,
+`order_manufacturing_step`.planned_internal_changeover,
+`order_manufacturing_step`.internal_changeover,
+`order_manufacturing_step`.external_changeover,
+`order_manufacturing_step`.planned_education,
+`order_manufacturing_step`.education,
+`order`.manufactured_count as need_order
 from `order_manufacturing_step` 
 INNER JOIN `manufacturing_step` on `order_manufacturing_step`.manufacturing_step_ID=`manufacturing_step`.ID
 INNER JOIN `order` on `order_manufacturing_step`.`order_ID`=`order`.ID
 WHERE `order`.`order_status_ID`>'1' order by `order_manufacturing_step`.ID DESC 
+LIMIT 100
 ";
 $resultWorkers = $conn -> query($sql);
 if ($resultWorkers->num_rows > 0) {
@@ -34,14 +39,18 @@ if ($resultWorkers->num_rows > 0) {
             <th scope="col">Azonosító</th>
             <th scope="col">Gyártási rendelés</th>
             <th scope="col">Vonalkód </th>			
-            <th scope="col">Gyártási lépés</th>
-            <th scope="col">Elvárt darabszám</th>
+            <th scope="col">Művelet</th>
+            <th scope="col">Gyártandó mennyiség</th>
+            <th scope="col">Elvárt teljesítmény</th>
+            <th scope="col">Tényleges teljesítmény</th>
             <th scope="col">Sikeres darabszám</th>
             <th scope="col">Selejt darabszám</th>
-			<th scope="col">Norma idő</th>
-			<th scope="col">Előkészítési idő</th>
-			<th scope="col">Egységnyi idő</th>
-			<th scope="col">Rezsióradíj</th>
+			<th scope="col">Önköltségi óradíj</th>
+			<th scope="col">Tervezett belső átállás</th>
+			<th scope="col">Tényleges belső átállás</th>
+			<th scope="col">Tényleges külső átállás</th>
+			<th scope="col">Tervezett Oktatás / Fejlesztés</th>
+			<th scope="col">Tényleges Oktatás / Fejlesztés</th>
 			<th scope="col">Módosítás</th>
 			<th scope="col">Törlés</th>
         </tr>
@@ -59,13 +68,17 @@ if ($resultWorkers->num_rows > 0) {
 			<td>'.$row["order_id"].'-'.$row["customer_number"].'</td>
 			<td>'.$row["barcode"].'</td>
             <td>'.$row["step_code"].'-'.$row["step_name"].'</td>
-            <td><input type="text" name="expected_count" value="'.$row["expected_count"].'" style="max-width:50px">db</td>            
-			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="max-width:50px">db/óra</td>
+            <td>'.$row["need_order"].'db</td>            
+            <td><input type="text" name="expected_performance" value="'.$row["expected_performance"].'" style="max-width:50px">perc/db</td>
+            <td><input type="text" name="performance" value="'.$row["performance"].'" style="max-width:50px">perc/db</td>            
+			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="max-width:50px">db</td>
             <td><input type="text" name="fail_count" value="'.$row["fail_count"].'" style="max-width:50px">db</td>
-			<td><input type="text" name="normal_time" value="'.$row["normal_time"].'" style="max-width:30px">perc</td>
-			<td><input type="text" name="preparation_time" value="'.$row["preparation_time"].'" style="max-width:40px">perc</td>
-			<td><input type="text" name="unit_of_time" value="'.$row["unit_of_time"].'" style="max-width:30px">perc</td>
 			<td><input type="text" name="overhead_fee" value="'.$row["overhead_fee"].'" style="max-width:50px">Ft/óra</td>
+            <td><input type="text" name="planned_internal_changeover" value="'.$row["planned_internal_changeover"].'" style="max-width:40px">perc</td>
+            <td><input type="text" name="internal_changeover" value="'.$row["internal_changeover"].'" style="max-width:40px">perc</td>
+            <td><input type="text" name="external_changeover" value="'.$row["external_changeover"].'" style="max-width:40px">perc</td>
+            <td><input type="text" name="planned_education" value="'.$row["planned_education"].'" style="max-width:40px">perc</td>
+            <td><input type="text" name="education" value="'.$row["education"].'" style="max-width:40px">perc</td>
 			<td><input type="hidden" name="ordmanstus_id" value="'.$row["order_manufacturing_step_id"].'"><input type="submit" value="Módosítás" class="btn btn-primary"></td>
             </form>
 			<form action="feldolgozok/deleteOrderManufacturingStep.php" method="POST">

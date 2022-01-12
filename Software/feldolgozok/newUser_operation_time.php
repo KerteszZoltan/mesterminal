@@ -7,8 +7,30 @@ if(!isset($_SESSION)){
 
 $user_id  = $_POST['user_id'];
 $operation_id  = $_POST['operation_id'];
-$date  = $_POST['date'];
-$time  = $_POST['time']*15;
+print $start_time=$_POST['start_time'];
+print $end_time=$_POST['end_time'];
+$start_time=$start_time.':00';
+$end_time=$end_time.':00';
+$date=$_POST['date'];
+
+
+$first  = new DateTime( $start_time );
+$second = new DateTime( $end_time );
+
+$diff = $first->diff( $second );
+
+$time=$diff->format( '%H:%I' ); // -> 00:25:25
+
+print "<br>";
+print $time;
+print "<br>";
+
+print "min".$min=substr($time,3);
+print "hourse".$hoursetomin=substr($time,0,2);
+print "<br>";
+print "különbség percben".$time=($hoursetomin*60)+$min;
+
+
 $selectCheck="SELECT user_id,operation_id,date from `user_operation_time` 
 where user_id='".$user_id."' AND operation_id='".$operation_id."' AND date='".$date."'";
 $resultCheck=$conn->query($selectCheck);
@@ -20,8 +42,8 @@ if ($resultCheck->num_rows > 0) {
     $sqlAdd="INSERT INTO `user_operation_time` (user_id,operation_id,date,time) 
                         VALUES ('{$user_id}','{$operation_id}','{$date}','{$time}')";
     $result = $conn->query($sqlAdd);
-    // $actualMonth=date("Y/m");
-    $actualMonth='2021/11';
+    $actualMonth=date("Y/m");
+    // $actualMonth='2021/11';
     $sqlSumCheck="SELECT user_ID, operation_ID, month from user_operation where user_ID='$user_id' and operation_ID='$operation_id' and month='$actualMonth'";
     $resultCheckMonthly=$conn->query($sqlSumCheck);
     if($resultCheckMonthly->num_rows>0){

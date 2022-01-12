@@ -5,7 +5,7 @@ if(!isset($_SESSION)){
 }
 
 $sql="SELECT machine_tool.ID as tool_id, machine_tool.barcode as tool_barcode, machine_tool.name as tool_name,
-machine.name as machine_name
+machine.name as machine_name, machine_tool.overhead_fee, machine_tool.internal_changeover
  from `machine_tool` inner join machine on machine_tool.machine_ID=machine.ID";
 $resultSQL = $conn -> query($sql);
 if ($resultSQL->num_rows > 0) {
@@ -18,6 +18,9 @@ if ($resultSQL->num_rows > 0) {
             <th scope="col">Szerszám vonalkódja</th>
             <th scope="col">Szerszám név</th>
             <th scope="col">Szerszámhoz tartozó gép</th>
+            <th scope="col">Szerszám rezsi óradíj</th>
+            <th scope="col">Szerszám belső átállás</th>
+
             <th scope="col">Módosítás</th>
             <th scope="col">Törlés</th>
 
@@ -33,6 +36,9 @@ if ($resultSQL->num_rows > 0) {
             <td><input type="text" name="tool_barcode" value="'.$row["tool_barcode"].'"></td>
             <td><input type="text" name="toolName" value="'.$row["tool_name"].'"></td>
             <td>'.$row["machine_name"].'</td>
+            <td><input type="text" name="overhead_fee" style="width:50px" value="'.$row["overhead_fee"].'">Ft/óra</td>
+            <td><input type="text" name="internal_changeover" style="width:50px" value="'.$row["internal_changeover"].'">perc</td>
+
             <td><Button type="submit" name="toolId" value="'.$row["tool_id"].'" class="btn btn-primary">Módosítás</button></td>
             </form>
             <form action="feldolgozok/deleteTool.php" method="POST">

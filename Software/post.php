@@ -17,7 +17,17 @@ print '
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Poszt megnevezés</span>
   <input type="text" name="post_name" class="form-control" placeholder="pl. karbantartó " required>
-  <input type="submit" value="Rögzítés" class="btn btn-primary">
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">A megadott poszt kulcs pozíciónak jelölése</span>
+  <input type="checkbox" style="height:40px" name="key_pozition" value="1">
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">A megadott poszt támogató poszt</span>
+  <input type="checkbox" style="height:40px" name="type" value="1">
+</div>
+<div class="input-group mb-3">
+<input type="submit" value="Rögzítés" class="btn btn-primary">
 </div>
 </form>
 ';

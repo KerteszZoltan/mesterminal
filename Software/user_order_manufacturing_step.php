@@ -15,6 +15,7 @@ else{
 if($adminId != 0){
 include_once("html_frame/html_body.html");
 print'
+<div class="text-center" style="width:100%"> A termelést programozó előirányozza a műszakvezető felülbírálhatja és kiosztja </div>
 
 <form action="user_order_manufacturing_step.php" method="post">
 <div class="input-group mb-3">
@@ -50,7 +51,7 @@ print'
 <div class="input-group mb-3">
   <span class="input-group-text">Műveleti lap:</span>
   <select name="order_manufacturing_step_ID" class="form-select" id="order_manufacturing_step_ID">
-  <option value=" " selected>Válassz gyártási lépést</option>';
+  <option value=" " selected>Válassz műveletet</option>';
   if(isset($_POST['customer_number'])){
     $customer_number=$_POST['customer_number'];
     $selectSite="
@@ -99,20 +100,7 @@ print'
   </select>
 </div>
 
-<div class="input-group mb-3">
-  <span class="input-group-text">Gyártási idő</span>
-  <input type="text" name="time" class="form-control"  aria-label="Server">
-</div>
 
-<div class="input-group mb-3">
-  <span class="input-group-text">Sikeresen gyártott darabszám</span>
-  <input type="text" name="pass_count" class="form-control"  aria-label="Server">
-</div>
-
-<div class="input-group mb-3">
-  <span class="input-group-text">Selejt darabszám</span>
-  <input type="text" name="fail_count" class="form-control"  aria-label="Server">
-</div>
 
 
 <input type="submit" value="Rögzítés" class="btn btn-primary">

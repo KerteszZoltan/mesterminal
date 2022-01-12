@@ -7,13 +7,11 @@ if(!isset($_SESSION)){
 
 print $user_ID  = $_POST['user_ID'];
 print $order_manufacturing_step_ID = $_POST['order_manufacturing_step_ID'];
-print $time = $_POST['time'];
-print $pass_count = $_POST['pass_count'];
-print $fail_count = $_POST['fail_count'];
 
 
-print $sql ="INSERT INTO `user_order_manufacturing_step` (user_ID, order_manufacturing_step_ID, time, pass_count, fail_count) 
-       VALUES ('{$user_ID}', '{$order_manufacturing_step_ID}','{$time}', '{$pass_count}', '{$fail_count}')";
+
+print $sql ="INSERT INTO `user_order_manufacturing_step` (user_ID, order_manufacturing_step_ID) 
+       VALUES ('{$user_ID}', '{$order_manufacturing_step_ID}')";
 $result = $conn->query($sql);
 if(!$sql){
     print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

@@ -6,9 +6,12 @@ if(!isset($_SESSION)){
 }
 
 print $post_name = ucwords($_POST['post_name']);
+$key_pozition=$_POST['key_pozition'];
+$type=$_POST['type'];
 
-    $sql ="INSERT INTO role (name) 
-	VALUES ('{$post_name}')";
+
+    $sql ="INSERT INTO role (name, key_pozition,type) 
+	VALUES ('{$post_name}','{$key_pozition}','{$type}')";
     $result = $conn->query($sql);
     if(!$sql){
         print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

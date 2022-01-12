@@ -24,7 +24,7 @@ print'
 </div>
 <hr>
 </form>
-
+<div class="text-center" style="width:100%"> A gyártást programozó tölti </div>
 <form action="feldolgozok/newOrderManufacturingStep.php" method="POST">
 
 
@@ -61,9 +61,9 @@ print'
   </select>
 </div>
 <div class="input-group mb-3">
-  <span class="input-group-text">Gyártási lépés</span>
+  <span class="input-group-text">Gyártási művelet</span>
   <select name="manufacturing_step_ID" class="form-select" id="site_id">
-    <option value=" " selected>Válassz gyártási lépést</option>';
+    <option value=" " selected>Válassz műveletet</option>';
     $selectSite="SELECT * from `manufacturing_step`";
     $resultSite=$conn->query($selectSite);
     if ($resultSite->num_rows > 0) {
@@ -79,9 +79,50 @@ print'
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text">Elvárt darabszám</span>
-  <input type="text" name="expected_count" class="form-control"  aria-label="Server">
-  <span class="input-group-text"> db/óra</span>
+  <span class="input-group-text">Elvárt teljesítmény</span>
+  <input type="text" name="expected_performance" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> perc/db</span>
+</div>
+
+
+<div class="input-group mb-3">
+  <span class="input-group-text"> Tervezett belső átállás </span>
+  <input type="text" name="planned_internal_changeover" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> perc </span>
+</div>
+
+
+<div class="input-group mb-3">
+  <span class="input-group-text"> Tervezett Oktatás / Fejlesztés </span>
+  <input type="text" name="planned_education" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> perc </span>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Önköltségi óradíj (felülírható, Szerszám+gép+művelet rezsi)</span>
+  <input type="text" name="overhead_fee" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> Ft/óra </span>
+</div>
+
+<div class="text-center" style="width:100%"> Adminisztrátor tölti </div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Tényleges teljesítmény</span>
+  <input type="text" name="performance" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> perc/db </span>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Tényleges belső átállás </span>
+  <input type="text" name="internal_changeover" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> perc</span>
+
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text">Tényleges külső átállás </span>
+  <input type="text" name="external_changeover" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> perc</span>
 </div>
 
 <div class="input-group mb-3">
@@ -99,27 +140,9 @@ print'
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text">Norma idő</span>
-  <input type="text" name="normal_time" class="form-control"  aria-label="Server">
-  <span class="input-group-text"> perc/db </span>
-</div>
-
-<div class="input-group mb-3">
-  <span class="input-group-text">Előkészítési idő</span>
-  <input type="text" name="preparation_time" class="form-control"  aria-label="Server">
-  <span class="input-group-text"> perc/db </span>
-</div>
-
-<div class="input-group mb-3">
-  <span class="input-group-text">Egységnyi idő</span>
-  <input type="text" name="unit_of_time" class="form-control"  aria-label="Server">
-  <span class="input-group-text"> perc/db </span>
-</div>
-
-<div class="input-group mb-3">
-  <span class="input-group-text">Rezsi óradíj</span>
-  <input type="text" name="overhead_fee" class="form-control"  aria-label="Server">
-  <span class="input-group-text"> Ft/óra </span>
+  <span class="input-group-text">Tényleges Oktatás/Fejlesztés </span>
+  <input type="text" name="education" class="form-control"  aria-label="Server">
+  <span class="input-group-text"> perc</span>
 </div>
 
 <input type="submit" value="Rögzítés" class="btn btn-primary">

@@ -6,13 +6,12 @@ if(!isset($_SESSION)){
 
 $sql="SELECT 
 `user_order_manufacturing_step`.ID as sorszam,
+`user_order_manufacturing_step`.time,
 `user`.ID as user_id,
 `user`.name,
 `order_manufacturing_step`.barcode,
-`manufacturing_step`.name as manfac_name,
-`user_order_manufacturing_step`.time,
-`user_order_manufacturing_step`.pass_count,
-`user_order_manufacturing_step`.fail_count
+`order`.customer_number,
+`manufacturing_step`.name as manfac_name
 FROM `user_order_manufacturing_step`
 INNER JOIN `user` ON `user_order_manufacturing_step`.user_ID=`user`.ID
 INNER JOIN `order_manufacturing_step` ON `user_order_manufacturing_step`.order_manufacturing_step_ID=`order_manufacturing_step`.ID
@@ -32,10 +31,8 @@ if ($resultWorkers->num_rows > 0) {
             <th scope="col">Dolgozó neve</th>
             <th scope="col">Vonalkód </th>			
             <th scope="col">Művelet neve</th>
-            <th scope="col">Gyártási idő</th>
-            <th scope="col">Sikeres darabszám</th>
-            <th scope="col">Selejt darabszám</th>
-			
+            <th scope="col">Vevői rendelés száma</th>
+            <th scope="col">Művelettel töltött idő</th>
         </tr>
         </thead>
         <tbody>
@@ -61,9 +58,8 @@ if ($resultWorkers->num_rows > 0) {
 
 			<td>'.$row["barcode"].'</td>
             <td>'.$row["manfac_name"].'</td>
-            <td><input type="text" name="time" value="'.$row["time"].'" style="width:70px"></td>            
-			<td><input type="text" name="pass_count" value="'.$row["pass_count"].'" style="width:70px"></td>
-            <td><input type="text" name="fail_count" value="'.$row["fail_count"].'" style="width:70px"></td>
+            <td>'.$row["customer_number"].'</td>
+            <td><input type="text" name="time" style="width:50px" value="'.$row["time"].'">perc</td>
 			<td><input type="hidden" name="usormanstep_ID" value="'.$row["sorszam"].'"><input type="submit" value="Módosítás" class="btn btn-primary"></td>
             </form>
 			</tr>';

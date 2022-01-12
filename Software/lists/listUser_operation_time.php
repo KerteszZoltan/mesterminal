@@ -4,9 +4,8 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$user_id=$_POST['user_id'];
-$operation_id=$_POST['operation_id'];
-$date=$_POST['date'];
+$user_id = isset($_POST['user_id']) ? $_POST['user_id'] : '';
+$date = isset($_POST['date']) ? $_POST['date'] : '';
 
 $select="SELECT 
         user.name as user_name,

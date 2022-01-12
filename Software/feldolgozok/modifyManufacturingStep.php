@@ -12,13 +12,17 @@ $step_code = $_POST['step_code'];
 $name = $_POST['name'];
 $category_ID = $_POST['category_ID'];
 $overhead_fee=$_POST['overhead_fee'];
+$education=$_POST['education'];
+
 
 print $sql="UPDATE `manufacturing_step` SET 
 `barcode`='$barcode', 
 `step_code`='$step_code', 
 `name`='$name', 
 `category_ID`='$category_ID',
-`overhead_fee`='$overhead_fee'
+`overhead_fee`='$overhead_fee',
+`education`='$education'
+
 where `ID`='$ID'";
 
 $result = $conn->query($sql);

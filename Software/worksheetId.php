@@ -19,10 +19,9 @@ $selectWorkSheet="
 SELECT 
 `order_manufacturing_step`.ID as ormast_ID,
 `order_manufacturing_step`.barcode,
-`order_manufacturing_step`.expected_count,
-`order_manufacturing_step`.normal_time,
-`order_manufacturing_step`.preparation_time,
-`order_manufacturing_step`.unit_of_time,
+`order_manufacturing_step`.expected_performance,
+`order_manufacturing_step`.planned_internal_changeover,
+`order_manufacturing_step`.planned_education,
 `manufacturing_step`.name as step_name,
 `manufacturing_step`.step_code,
 `product`.name as product_name
@@ -37,10 +36,10 @@ if ($resultWorksheet->num_rows > 0) {
     while($row = $resultWorksheet->fetch_assoc()) {
         $ormast_ID=$row['ormast_ID'];
         $barcode=$row['barcode'];
-        $expected_count=$row['expected_count'];
-        $normal_time=$row['normal_time'];
-        $preparation_time=$row['preparation_time'];
-        $unit_of_time=$row['unit_of_time'];
+        $expected_performance=$row['expected_performance'];
+        $planned_internal_changeover=$row['planned_internal_changeover'];
+        $planned_education=$row['planned_education'];
+        
         $step_name=$row['step_name'];
 		$step_code=$row['step_code'];
 		$product_name=$row['product_name'];
@@ -95,29 +94,22 @@ print '
 <td> Termék: </td>
 <td colspan="2" >'.$product_name.'</td>
 </tr><tr>
-<td> Elvárt darabszám: </td>
-<td colspan="2" >'.$expected_count.' darab/óra </td>
-</tr><tr>
-<td> Sikeres darabszám: </td>
-<td colspan="2" > ........... db </td>
+<td> Elvárt teljesítmény: </td>
+<td colspan="2" >'.$expected_performance.' darab/perc </td>
 </tr><tr>
 </tr><tr>
-<td> Selejt darabszám: </td>
-<td colspan="2" > ........... db </td>
+</tr><tr>
+<td> Tervezett belső átállás(gép+szerszám): </td>
+<td colspan="2" >'.$planned_internal_changeover.' perc </td>
 </tr><tr>
 </tr><tr>
-<td> Norma idő: </td>
-<td colspan="2" > '.$normal_time.' perc/db </td>
+<td> Tervezett oktatás: </td>
+<td colspan="2" >'.$planned_education.' perc </td>
 </tr><tr>
-</tr><tr>
-<td> Előkészítési idő: </td>
-<td colspan="2" > '.$preparation_time.' perc/db </td>
-</tr><tr>
-</tr><tr>
-<td> Egységnyi idő: </td>
-<td colspan="2" > '.$unit_of_time.' perc/db </td>
 </tr><tr>
 <td> Gép: </td>
+</tr><tr>
+
 ';
 if (!empty($machineNames)) {
     foreach ($machineNames as $machine) {
@@ -132,26 +124,54 @@ if (!empty($toolNames)) {
         print '<tr><td></td><td colspan="2">'.$tool.'</td></tr>';
     }
 }
+print '</table>
+</div>';
 
-/*$sqlAppendix="SELECT `attachment`.name as attachment_name from `attachment` 
-inner join product_attachment on `attachment`.ID=`product_attachment`.attachment_ID 
-inner join product on `product_attachment`.product_ID=product.ID 
-where product.ID='$product_ID'";
-$resultAppendix=$conn->query($sqlAppendix);
-if ($resultAppendix->num_rows > 0) {
-    while($row = $resultAppendix->fetch_assoc()) {
-        $fileName[]=$row['attachment_name'];
-    }
-}
-print '
-<tr><td> Csatolmányok: </td>';
 if (!empty($fileName)) {
     foreach ($fileName as $file) {
-        print '<tr><td></td><td colspan="2">'.$file.'</td></tr>';
+    print '
+	<div style="width: 21cm;
+    height: 29.3cm;
+    padding: 2cm;
+    margin: 1cm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+        <img style="width:100%; height:100%"src="attachments/'.$file.'">
+		
+        
+	</div>';
     }
-}*/
-print '</table>';
+}
 
+$sqlManStepAttachment="SELECT `attachment`.name FROM `attachment` 
+inner join `manufacturing_step_attachment` on `attachment`.ID=`manufacturing_step_attachment`.attachment_ID
+inner join `manufacturing_step` on `manufacturing_step_attachment`.manufacturing_step_ID=`manufacturing_step`.ID
+WHERE `manufacturing_step`.step_code='$step_code'";
+$result_attachment=$conn->query($sqlManStepAttachment);
+if ($result_attachment->num_rows > 0) {
+    while($row = $result_attachment->fetch_assoc()) {
+        $fileName[]=$row['name'];
+    }
+}
+if (!empty($fileName)) {
+    foreach ($fileName as $file) {
+    print '
+	<div style="width: 21cm;
+    height: 29.3cm;
+    padding: 2cm;
+    margin: 1cm auto;
+    border: 1px #D3D3D3 solid;
+    border-radius: 5px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);">
+        <img style="width:100%; height:100%"src="attachments/'.$file.'">
+		
+        
+	</div>';
+    }
+}
 
 } else{
     print '<img src="./DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

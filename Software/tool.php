@@ -19,6 +19,7 @@ print '
 <div class="input-group mb-3">
 <span class="input-group-text" id="basic-addon1">Szerszám vonalkódja</span>
   <input type="text" name="tool_barcode" class="form-control" placeholder="pl. 123456 ">
+</div>
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Szerszám megnevezése</span>
   <input type="text" name="tool_name" class="form-control" placeholder="pl. Fúró " required>
@@ -39,6 +40,17 @@ if ($reultMachines->num_rows > 0) {
 }
 print '
 </select>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Szerszám óradíja</span>
+  <input type="text" name="overhead_fee" class="form-control">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Szerszám belső átállás</span>
+  <input type="text" name="internal_changeover" class="form-control">
+  <span class="input-group-text" id="basic-addon1">perc</span>
 </div>
 
 <div class="input-group mb-3">

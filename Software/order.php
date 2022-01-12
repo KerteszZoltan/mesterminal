@@ -14,6 +14,7 @@ else{
 if($adminId != 0){
 include_once("html_frame/html_body.html");
 print'
+<div class="text-center" style="width:100%"> A termelést programozó tölti ki </div>
 <form action="feldolgozok/newWorkpage.php" method="POST">
 
 <!-- <div class="input-group mb-3">
@@ -81,22 +82,22 @@ print '</select>
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text">Összes gyártani kívánt darabszám</span>
-  <input type="text" name="total_count" class="form-control"  aria-label="Server">
+  <span class="input-group-text">Vevői rendelés darabszáma</span>
+  <input type="text" name="customer_count" class="form-control"  aria-label="Server">
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text">Elvárt darabszám</span>
-  <input type="text" name="expected_count" class="form-control"  aria-label="Server">
+  <span class="input-group-text">Most gyártani kívánt darabszám</span>
+  <input type="text" name="manufactured_count" class="form-control"  aria-label="Server">
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text">Sikeresen gyártott darabszám</span>
+  <span class="input-group-text">Sikeresen gyártott darabszám (Utólagos felvitelkor)</span>
   <input type="text" name="pass_count" class="form-control"  aria-label="Server">
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text">Selejt darabszám</span>
+  <span class="input-group-text">Selejt darabszám (Utólagos felvitelkor)</span>
   <input type="text" name="fail_count" class="form-control"  aria-label="Server">
 </div>
 

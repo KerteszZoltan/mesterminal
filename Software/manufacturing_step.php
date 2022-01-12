@@ -17,23 +17,23 @@ print '
 <form action="feldolgozok/newManufacturing_step.php" method="POST">
 
 <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">Gyártási lépés vonalkódja:</span>
+  <span class="input-group-text" id="basic-addon1">Gyártási művelet vonalkódja:</span>
   <input type="text" name="barcode" class="form-control" placeholder="pl. 1234567" aria-label="nev" aria-describedby="basic-addon1">
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">Gyártási lépés kódja:</span>
+  <span class="input-group-text" id="basic-addon1">Gyártási művelet kódja:</span>
   <input type="text" name="step_code" class="form-control" placeholder="MUV0000" aria-label="nev" aria-describedby="basic-addon1" required>
 </div>
 
 <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">Gyártási lépés neve:</span>
+  <span class="input-group-text" id="basic-addon1">Gyártási művelet neve:</span>
   <input type="text" name="name" class="form-control" aria-label="nev" aria-describedby="basic-addon1" required>
 </div>
 
 
 <div class="input-group mb-3">
-        <label class="input-group-text" for="user_type">Kategória</label>
+        <label class="input-group-text" for="user_type">Gyártási művelet kategória</label>
         <select name="category_id" class="form-select" id="user_type" required>';
         $selectCategory="SELECT * FROM `category`";
         $resultCategory=$conn->query($selectCategory);
@@ -49,9 +49,14 @@ print '
 </select>
 </div>
 <div class="input-group mb-3">
-  <span class="input-group-text" id="basic-addon1">Lépés rezsi óradíja:</span>
+  <span class="input-group-text" id="basic-addon1">Gyártási művelet rezsi óradíja:</span>
   <input type="text" name="overhead_fee" class="form-control" aria-describedby="basic-addon1" required>
   <span class="input-group-text" id="basic-addon1"> Ft/óra</span>
+</div>
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Gyártási művelet oktatás/fejlesztési ideje:</span>
+  <input type="text" name="education" class="form-control">
+  <span class="input-group-text" id="basic-addon1"> perc</span>
 </div>
 <input type="submit" value="Rögzítés" class="btn btn-primary">
 </form>

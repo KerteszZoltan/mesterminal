@@ -4,7 +4,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 
-$sql="SELECT * from `category` order by name ASC";
+$sql="SELECT * from `category` order by id ASC";
 $reultErrors = $conn -> query($sql);
 if ($reultErrors->num_rows > 0) {
     print '

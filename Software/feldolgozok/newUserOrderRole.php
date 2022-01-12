@@ -11,15 +11,18 @@ if(isset($_POST['standard'])){
         $users = array(56, 49, 9, 3, 49);
         $posts = array(10, 8, 20, 17, 18);
         print $sql_standard="INSERT INTO user_order_role (user_ID, order_ID, role_ID) VALUES 
+        ('3', '{$workpageId}', '23'),
         ('56', '{$workpageId}', '10'),
-        ('49', '{$workpageId}', '8'),
-        ('9', '{$workpageId}', '20'),
-        ('3', '{$workpageId}', '17'),
-        ('49', '{$workpageId}', '18');";
+        ('60', '{$workpageId}', '8'),
+        ('56', '{$workpageId}', '20'),
+        ('2', '{$workpageId}', '24'),
+        ('9', '{$workpageId}', '25'),
+        ('27', '{$workpageId}', '26'),
+        ('16', '{$workpageId}', '18');";
         $result=$conn->query($sql_standard);
         header("Location: ../user_order_role.php");
         if(!$sql_standard){
-            print ' Nem jóóó ';
+            print ' Nem jó ';
         }
     }else{
         print 'Hiba';

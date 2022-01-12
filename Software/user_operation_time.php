@@ -34,9 +34,9 @@ print '
     </select>
 </div>
 <div class="input-group mb-3">
-    <label class="input-group-text" for="operations"> Művelet kiválasztása</label>
+    <label class="input-group-text" for="operations"> Munkaidő elszámolási típus kiválasztása</label>
     <select name="operation_id" class="form-select" id="operations">
-        <option selected>Válassz műveletet</option>
+        <option selected>Válassz típust</option>
 ';
 if ($resultOperation->num_rows>0) {
     while ($row=$resultOperation->fetch_assoc()) {
@@ -51,9 +51,12 @@ print '
     <input type="date" name="date" id="date">
 </div>
 <div class="input-group mb-3">
-    <label class="input-group-text" for="time">Idő</label>
-    <input type="text" name="time" id="time">
-    <label class="input-group-text" for="date">negyed óra</label>
+    <label class="input-group-text" for="time">Kezdési idő</label>
+    <input type="time" name="start_time" id="time">
+</div>
+<div class="input-group mb-3">
+<label class="input-group-text" for="time">Befejezési idő</label>
+<input type="time" name="end_time" id="time">
 </div>
 <div class="input-group mb-3">
   <input type="submit" value="Rögzítés" class="btn btn-primary">

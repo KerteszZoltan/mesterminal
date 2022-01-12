@@ -16,11 +16,22 @@ print '
 <form action="feldolgozok/newProduct.php" method="POST">
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Termék vonalkódja:</span>
-  <input type="text" name="product_barcode" class="form-control" placeholder="Termék vonalkódja" aria-label="nev" aria-describedby="basic-addon1">
+  <input type="text" name="product_barcode" class="form-control" placeholder="Termék vonalkódja">
 </div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Termék cikkszám:</span>
+  <input type="text" name="article_number" class="form-control" aria-describedby="basic-addon1">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Termék idegen azonosítója:</span>
+  <input type="text" name="foreign_id" class="form-control" aria-describedby="basic-addon1">
+</div>
+
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Termék neve:</span>
-  <input type="text" name="product_name" class="form-control" placeholder="Termék neve" aria-label="nev" aria-describedby="basic-addon1" required>
+  <input type="text" name="product_name" class="form-control" placeholder="Termék neve" required>
 </div>
 <input type="submit" value="Rögzítés" class="btn btn-primary">
 </form>

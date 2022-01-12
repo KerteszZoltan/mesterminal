@@ -32,6 +32,42 @@ print '
     }
     print'
   </select>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Standard kulcspozíció kiosztás</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Gyártás indító</label>
+  <label class="input-group-text">Szabó Helga</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Anyagbeszerző</label>
+  <label class="input-group-text">Szabariné Orosz Ágnes</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Karbantartó</label>
+  <label class="input-group-text">Béres Ferenc</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Logisztikai felelős</label>
+  <label class="input-group-text">Szabariné Orosz Ágnes</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Termelési adminisztrátor</label>
+  <label class="input-group-text">Urbán Kristóf</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Kereskedő</label>
+  <label class="input-group-text">Birkás Éva</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Műszaki támogató</label>
+  <label class="input-group-text">Rózsa-Mauric Péter</label>
+  </div>
+  <div class="input-group mb-3">
+  <label class="input-group-text">Műszakvezető</label>
+  <label class="input-group-text">Budainé Stupek Edit</label>
+  </div>
   <div class="input-group mb-3">
 <label class="input-group-text" for="workers">Gyors projekt felelős kiosztás</label>
 <input type="hidden" name="standard" value="1"> 
@@ -46,26 +82,6 @@ print '
 </div>
 
 <form action="feldolgozok/newUserOrderRole.php" method="POST">
-        <div class="input-group mb-3">
-        <div class="input-group mb-3">
-        <label class="input-group-text" for="workers">Dolgozó</label>
-        <select name="workerId" class="form-select" id="workers">
-          <option selected>Válassz Dolgozót</option>
-';
-
-$selectWorker="SELECT * FROM `user` order by name asc";
-//$selectWorkpage="SELECT * FROM `order` where `order`.order_status_ID>'1' order by ID desc";
-$selectRole="SELECT * FROM `role` order by `name` asc";
-$reultWorker = $conn -> query($selectWorker);
-if ($reultWorker->num_rows > 0) {
-    while($row = $reultWorker->fetch_assoc()) {
-        print '
-          <option value="'.$row['ID'].'">'.$row['name'].'</option>
-        ';
-    }
-}
-print '</select>
-</div>
 <div class="input-group mb-3">
   <div class="input-group mb-3">
   <label class="input-group-text" for="workapages">Gyártási rendelés</label>
@@ -84,9 +100,10 @@ print '</select>
 </div>
 
 <div class="input-group mb-3">
-  <label class="input-group-text" for="user_roles">Dolgozó felelősségi kör</label>
+  <label class="input-group-text" for="user_roles">Dolgozói kulcs pozíció</label>
   <select name="user_role" class="form-select" id="user_roles">
-    <option selected>Válassz felelősségi kört</option>';
+    <option selected>Válassz kulcs pozíciót</option>';
+    $selectRole="SELECT * FROM `role` where key_pozition > '0' order by `role`.name asc";
     $resultRole = $conn -> query($selectRole);
     if ($resultRole->num_rows > 0) {
         while($row = $resultRole->fetch_assoc()) {
@@ -97,6 +114,26 @@ print '</select>
     }
     print'
   </select>
+</div>
+
+<div class="input-group mb-3">
+  <label class="input-group-text" for="workers">Dolgozó</label>
+  <select name="workerId" class="form-select" id="workers">
+    <option selected>Válassz Dolgozót</option>
+';
+$selectWorker="SELECT `user`.ID, `user`.name, `role`.name as role_name FROM `user` 
+inner join `user_role` on `user`.ID =`user_role`.user_ID
+inner join `role` on `role`.ID=`user_role`.role_ID 
+where `role`.key_pozition > '0' order by `role`.name asc;";
+$reultWorker = $conn -> query($selectWorker);
+if ($reultWorker->num_rows > 0) {
+    while($row = $reultWorker->fetch_assoc()) {
+        print '
+          <option value="'.$row['ID'].'">'.$row['name'].' - '.$row['role_name'].'</option>
+        ';
+    }
+}
+print '</select>
 </div>
 
   <input type="submit" name="custom_responsible"value="Rögzítés" class="btn btn-primary">

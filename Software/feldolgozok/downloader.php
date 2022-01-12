@@ -46,8 +46,8 @@ else{
 echo "File does not exist.";
 }
 }
-else
-echo "Filename is not defined."
+else{
+echo "Filename is not defined.";
 	
 }
 

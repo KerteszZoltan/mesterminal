@@ -14,8 +14,8 @@ print '
     ';
     
 
-//$actualDate=date("Y/m");
-$actualDate="2021/11";
+$actualDate=date("Y/m");
+//$actualDate="2021/11";
 
 $sql="SELECT 
 user.ID, user.name,
@@ -33,7 +33,7 @@ if ($reultWorkersPosts->num_rows > 0) {
         <form action="feldolgozok/modifyWorkersOperations.php" method="POST">
         <input type="hidden" name="workerAndOperationId" value="'.$row['user_operation_id'].'">
         <input type="hidden" name="actualTime" value="'.$row['time'].'">
-        <td style="text-align:center; vertical-align:middle"><input type="text" name="operationTime" value="'.$row['time'].'"></td>
+        <td style="text-align:center; vertical-align:middle">'.$row['time'].'</td>
         </form>
         <td style="text-align:center; vertical-align:middle">'.$row['month'].'</td> 
         </tr>

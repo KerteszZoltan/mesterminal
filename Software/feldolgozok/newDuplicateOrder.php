@@ -33,7 +33,6 @@ print "<br>";
 $sqlSelectOrder="SELECT CONCAT(`manufacturing_step`.`step_code`, '-' ,'$last') as barcode,
  `order_manufacturing_step`.`order_ID`,
  `order_manufacturing_step`.`manufacturing_step_ID`,
- `order_manufacturing_step`.`normal_time`
 from `order_manufacturing_step` 
 INNER JOIN `manufacturing_step` on `order_manufacturing_step`.`manufacturing_step_ID`=`manufacturing_step`.`ID`
 where order_manufacturing_step.order_ID='".$official."';";
@@ -43,10 +42,9 @@ $resultSelectOrder=$conn->query($sqlSelectOrder);
         $barcode=$row['barcode'];
         $order_ID=$last;
         $manufacturing_step_ID=$row['manufacturing_step_ID'];
-        $normal_time=$row['normal_time'];
 
-        print $sqlInsertStep="INSERT INTO `order_manufacturing_step`(`barcode`, `order_ID`, `manufacturing_step_ID`,`normal_time`) VALUES 
-        ('{$barcode}', '{$last}', '{$manufacturing_step_ID}', '{$normal_time}')";
+        print $sqlInsertStep="INSERT INTO `order_manufacturing_step`(`barcode`, `order_ID`, `manufacturing_step_ID`) VALUES 
+        ('{$barcode}', '{$last}', '{$manufacturing_step_ID}')";
         print '<br>';
         $resutlinsert=$conn->query($sqlInsertStep);
     }

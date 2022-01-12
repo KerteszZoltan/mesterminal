@@ -11,7 +11,14 @@ if(!empty($_POST)){
     print $toolName = ucwords($_POST['toolName']);
     print $toolId=$_POST['toolId'];
     print $tool_barcode=$_POST['tool_barcode'];
-    $sql="UPDATE `machine_tool` SET `name`='$toolName', barcode='$tool_barcode' WHERE `ID`='$toolId'";
+    print $overhead_fee=$_POST['overhead_fee'];
+    print $internal_changeover=$_POST['internal_changeover'];
+
+    $sql="UPDATE `machine_tool` SET 
+    `name`='$toolName', 
+    `overhead_fee`='$overhead_fee', 
+    `internal_changeover`='$internal_changeover', 
+    barcode='$tool_barcode' WHERE `ID`='$toolId'";
     $result = $conn->query($sql);
     if(!$result){
         print "nem sikerült a módosítás";

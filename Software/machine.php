@@ -17,11 +17,24 @@ print '
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Gép vonalkódja</span>
   <input type="text" name="machine_barcode" class="form-control" placeholder="pl. 123456 ">
-  </div>
+</div>
+
 <div class="input-group mb-3">
   <span class="input-group-text" id="basic-addon1">Gép megnevezése</span>
   <input type="text" name="machine_name" class="form-control" placeholder="pl. Habosító " required>
-  </div>
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Gép rezsi óradíja</span>
+  <input type="text" name="overhead_fee" class="form-control">
+</div>
+
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon1">Gép belső átállási ideje</span>
+  <input type="text" name="internal_changeover" class="form-control">
+  <span class="input-group-text" id="basic-addon1">perc</span>
+</div>
+
 <div class="input-group mb-3">
   <input type="submit" value="Rögzítés" class="btn btn-primary">
 </div>

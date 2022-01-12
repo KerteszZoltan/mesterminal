@@ -9,13 +9,13 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
       </a>
       <ul class="nav nav-pills">
         <li class="nav-item">
-          
       </li>
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Alapadatok</a>
             <ul class="dropdown-menu">
 			  <li><a class="dropdown-item" href="product.php">Termék feltöltés</a></li>
-			  <li><a class="dropdown-item" href="attachment.php">Csatolmányok</a></li>
+			  <li><a class="dropdown-item" href="attachment.php">Termékhez tartozó csatolmányok feltöltése</a></li>
+			  <li><a class="dropdown-item" href="manufacturing_step_attachment.php">Művelethez tartozó csatolmányok feltöltése</a></li>
 			  <li><a class="dropdown-item" href="machine.php">Gép feltöltés</a></li>
 			  <li><a class="dropdown-item" href="tool.php">Szerszám feltöltés</a></li>
 			  <li><a class="dropdown-item" href="error.php">Hiba feltöltés</a></li>
@@ -24,18 +24,18 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
 			  <li><hr class="dropdown-divider"></li>
 			  <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="user.php">Dolgozó feltöltés</a></li>
-			  <li><a class="dropdown-item" href="user_role.php">Dolgozó és posztok</a></li>
+			  <li><a class="dropdown-item" href="user_role.php">Dolgozó és posztok egymáshoz rendelése</a></li>
 			  <li><hr class="dropdown-divider"></li>
 			  <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="post.php">Dolgozói posztok</a></li>
-              <li><a class="dropdown-item" href="operation.php">Dolgozói műveletek</a></li>
+              <li><a class="dropdown-item" href="operation.php">Munkaidő elszámolási típusok</a></li>
             </ul>
           </li>
 		  <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Gyártás előkészítése</a>
             <ul class="dropdown-menu">
-			  <li><a class="dropdown-item" href="category.php">Gyártási kategória feltöltés</a></li>
-              <li><a class="dropdown-item" href="manufacturing_step.php">Gyártási lépés feltöltés</a></li>
+			  <li><a class="dropdown-item" href="category.php">Gyártási művelet kategória feltöltés</a></li>
+              <li><a class="dropdown-item" href="manufacturing_step.php">Gyártási művelet feltöltés</a></li>
             </ul>
           </li>
 		  <li class="nav-item dropdown">
@@ -43,11 +43,10 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
             <ul class="dropdown-menu">
 			  <li><a class="dropdown-item" href="order.php">Gyártási rendelés feltöltés</a></li>
 			  <li><a class="dropdown-item" href="user_order_role.php">Gyártási rendelés felelősei</a></li>
-			  <li><a class="dropdown-item" href="order_manufacturing_step.php">Gyártási rendeléshez tartozó lépés</a></li>
+			  <li><a class="dropdown-item" href="order_manufacturing_step.php">Gyártási rendeléshez tartozó művelet</a></li>
 			  <li><a class="dropdown-item" href="user_order_manufacturing_step.php">Műveleti lap dolgozói</a></li>
 			  <li><a class="dropdown-item" href="order_machine_tool.php">Műveleti laphoz tartozó gép és szerszám</a></li>
 			  <li><hr class="dropdown-divider"></li><li><hr class="dropdown-divider"></li>
-			  <li><a class="dropdown-item" href="workerOperation.php">Dolgozói műveletek havi</a></li>
               <li><a class="dropdown-item" href="user_operation_time.php">Dolgozói műveletek napi</a></li>
 			  <li><a class="dropdown-item" href="error_order_machine.php">Hiba a műveleti lapon</a></li>
             </ul>
@@ -56,6 +55,7 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
             <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Statisztika</a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="lists/listuser_order.php">Rendelésen dolgozók órái</a></li>
+			  <li><a class="dropdown-item" href="workerOperation.php">Dolgozói műveletek havi</a></li>
             </ul>
           </li>
         </li>		  		  

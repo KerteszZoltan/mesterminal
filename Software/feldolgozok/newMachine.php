@@ -7,9 +7,12 @@ if(!isset($_SESSION)){
 
 print $machine_name = ucwords($_POST['machine_name']);
 print $machine_barcode = $_POST['machine_barcode'];
+print $overhead_fee = $_POST['overhead_fee'];
+print $internal_changeover = $_POST['internal_changeover'];
 
-print $sql ="INSERT INTO machine (barcode,name) 
-	   VALUES ('{$machine_barcode}', '{$machine_name}')";
+
+print $sql ="INSERT INTO machine (barcode,name,overhead_fee,internal_changeover) 
+	   VALUES ('{$machine_barcode}', '{$machine_name}', '{$overhead_fee}', '{$internal_changeover}')";
 $result = $conn->query($sql);
     if(!$sql){
         print '<img src="../DOC/img/mesterminal.jpg" alt="" width="100%" height="30%" class="d-inline-block align-text-top">';

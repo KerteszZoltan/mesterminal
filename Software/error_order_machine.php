@@ -13,22 +13,27 @@ else{
 if($adminId != 0){
 include_once("html_frame/html_body.html");
 include_once("connection.php");
-print '<form action="feldolgozok/newOrder_error_machine.php" method="POST">
+print '
+<div class="text-center" style="width:100%"> A gyártási adminisztrátor tölti ki </div>
+<form action="error_order_machine.php" method="POST">
+<div class="input-group mb-3">
+  <span class="input-group-text" id="basic-addon3">Gyártási rendelés keresése</span>
+  <input type="text" name="customer_number" class="form-control" value="" aria-label="Server">
+  <input type="submit" value="Keresés" class="btn btn-primary">
+</div>
+<hr>
+</form>
+
+<form action="feldolgozok/newOrder_error_machine.php" method="POST">
         <div class="input-group mb-3">
         <div class="input-group mb-3">
-        <label class="input-group-text" for="errorId">Hiba</label>
+        <label class="input-group-text" for="errorId">Hiba oka</label>
         <select name="error_ID" class="form-select" id="errorId">
-          <option selected>Válassz Hibát</option>
+          <option selected>Válassz hiba okot</option>
 ';
 $selectError="SELECT * FROM `error`";
-$selectOrder="SELECT `order_manufacturing_step`.barcode as omanstep_barcode,
-`order_manufacturing_step`.ID as ormanstep_id,
-`manufacturing_step`.step_code,
-`manufacturing_step`.name as step_name
- FROM `order_manufacturing_step` 
-INNER JOIN `manufacturing_step` on `order_manufacturing_step`.manufacturing_step_ID=`manufacturing_step`.ID";
 $reultError = $conn -> query($selectError);
-$resultOrder = $conn -> query($selectOrder);
+
 if ($reultError->num_rows > 0) {
     while($row = $reultError->fetch_assoc()) {
         print '
@@ -40,7 +45,39 @@ print '
 </select></div>
 <div class="input-group mb-3">
   <div class="input-group mb-3">
-  <label class="input-group-text" for="orders">Műveleti lap</label>
+  <label class="input-group-text" for="orders">Művelet</label>';
+  if(isset($_POST['customer_number'])){
+    $customer_number=$_POST['customer_number'];
+    $selectOrder="SELECT `order_manufacturing_step`.barcode as omanstep_barcode,
+    `order_manufacturing_step`.ID as ormanstep_id,
+    `manufacturing_step`.step_code,
+    `manufacturing_step`.name as step_name
+     FROM `order_manufacturing_step` 
+    INNER JOIN `manufacturing_step`on `order_manufacturing_step`.manufacturing_step_ID=`manufacturing_step`.ID
+    INNER JOIN `order` on `order_manufacturing_step`.order_ID=`order`.ID 
+    WHERE `order`.customer_number='".$customer_number."'";
+    $resultOrder = $conn -> query($selectOrder);
+    print'
+  <select name="or_man_step" class="form-select" id="orders">
+    <option selected>Válassz műveleti lapot</option>
+    ';
+    
+    if ($resultOrder->num_rows > 0) {
+        while($row = $resultOrder->fetch_assoc()) {
+            print '
+              <option value="'.$row['ormanstep_id'].'">'.$row['omanstep_barcode'].' -- '.$row['step_name'].'</option>
+            ';
+        }
+    }
+  }else{
+  $selectOrder="SELECT `order_manufacturing_step`.barcode as omanstep_barcode,
+  `order_manufacturing_step`.ID as ormanstep_id,
+  `manufacturing_step`.step_code,
+  `manufacturing_step`.name as step_name
+   FROM `order_manufacturing_step` 
+  INNER JOIN `manufacturing_step` on `order_manufacturing_step`.manufacturing_step_ID=`manufacturing_step`.ID";
+  $resultOrder = $conn -> query($selectOrder);
+  print'
   <select name="or_man_step" class="form-select" id="orders">
     <option selected>Válassz műveleti lapot</option>';
     if ($resultOrder->num_rows > 0) {
@@ -50,6 +87,7 @@ print '
             ';
         }
     }
+  }
     print'
   </select>';
 
@@ -74,9 +112,9 @@ print '
 print'
 <div class="input-group mb-3">
   <div class="input-group mb-3">
-  <label class="input-group-text" for="tools">Eszköz amin a hiba jelentkezett</label>
+  <label class="input-group-text" for="tools">Szerszám amin a hiba jelentkezett</label>
   <select name="machine_tool_ID" class="form-select" id="tools">
-    <option value=" "selected>Válassz eszközt</option>';
+    <option value=" "selected>Válassz szerszámot</option>';
     $selectMachine="SELECT * from `machine_tool`";
     $resultMachine=$conn->query($selectMachine);
     if ($resultMachine->num_rows > 0) {
